@@ -1,0 +1,42 @@
+/*Joel Rohrer September 4 2025*/
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #007BFF;
+      padding: 12px 24px;
+      border-radius: 5px;
+      width: 250px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
