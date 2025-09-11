@@ -1,3 +1,4 @@
+//Joel Rohrer September 15 2025
 <script>
   const secondHand = document.querySelector('.second-hand');
   const minsHand = document.querySelector('.min-hand');
