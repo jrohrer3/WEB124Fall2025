@@ -1,23 +1,23 @@
 //Joel Rohrer September 15 2025
-const secondHand = document.querySelector('.second-hand');
-const minsHand = document.querySelector('.min-hand');
-const hourHand = document.querySelector('.hour-hand');
+//Changes: functionally the same; made some names of the Constant variables make more sense.
+const hourHand = document.querySelector('.hand.hour');
+const minuteHand = document.querySelector('.hand.minute');
+const secondHand = document.querySelector('.hand.second');
 
 function setDate() {
   const now = new Date();
-
   const seconds = now.getSeconds();
-  const secondsDegrees = ((seconds / 60) * 360) + 90;
-  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+  const minutes = now.getMinutes();
+  const hours = now.getHours();
 
-  const mins = now.getMinutes();
-  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
-  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+  const secondDegrees = ((seconds / 60) * 360) + 90;
+  const minuteDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+  const hourDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
 
-  const hour = now.getHours();
-  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
-  hourHand.style.transform = `rotate(${hourDegrees}deg)`; }
+  secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+  minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
 
 setInterval(setDate, 1000);
-
 setDate();
