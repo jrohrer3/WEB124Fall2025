@@ -1,9 +1,25 @@
 //Joel Rohrer September 15 2025
-//Changes: functionally the same; made some names of the Constant variables make more sense.
+//Change: altered some const variable names to make more legible sense.
 const hourHand = document.querySelector('.hand.hour');
 const minuteHand = document.querySelector('.hand.minute');
 const secondHand = document.querySelector('.hand.second');
 
+//Changes: added a function to generate 12 tick marks. 
+//Each tick is rotated by 30 degrees (360/12). 
+//They are then placed outwards [translateY(-14rem)].
+//This general position of the ticks is then placed on the clock face itself.
+function createClockTicks() {
+  const clockFace = document.querySelector('.clock-face');
+
+  for (let i = 0; i < 12; i++) {
+    const tick = document.createElement('div');
+    tick.classList.add('tick');
+    tick.style.transform = `rotate(${i * 30}deg) translateY(-14rem)`;
+    clockFace.appendChild(tick);
+  }
+}
+
+createClockTicks();
 function setDate() {
   const now = new Date();
   const seconds = now.getSeconds();
