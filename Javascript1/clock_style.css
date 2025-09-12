@@ -1,8 +1,9 @@
 /* Joel Rohrer September 15 2025 */
 html {
-      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+      /* Change: new forest-like background image; font family changed to Times New Roman. */
+      background: #018DED url(https://unsplash.com/photos/trees-on-forest-with-sun-rays-sp-p7uuT0tw);
       background-size: cover;
-      font-family: 'helvetica neue';
+      font-family: 'Times New Roman';
       text-align: center;
       font-size: 10px; }
 
