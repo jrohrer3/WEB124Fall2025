@@ -81,9 +81,23 @@ but it also fits the forest theme. */
   background: #704214;
 }
 
-/* The second hand was given a bright red color. */
+/* Change: the second hand was given a bright red color. */
 .hand.second {
   width: 50%;
   height: 2px;
   background: #d72638;
+}
+
+/* Change: added 12 tick marks around the clock face, making sure they are displayed around the center. */
+.tick {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transform: rotate(0deg) translateY(-14rem); /* move outward from center */
+  border-radius: 2px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
