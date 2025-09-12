@@ -18,20 +18,21 @@ body {
       align-items: center; }
 
 .clock {
+      /* Changes: added a soft white border, a minor glass effect & frost on glass.
+      This was done to make the clock appear amidst a looming forest. */
       width: 30rem;
       height: 30rem;
-      /* Change: clock hands are now light blue. */
-      border: 20px solid-white;
+      border: 20px solid rgba(255, 255, 255, 0.8); /* Subtle white border */
       border-radius: 50%;
       margin: 50px auto;
       position: relative;
       padding: 2rem;
+      background: rgba(255, 255, 255, 0.1); /* Minor glass effect */
+      backdrop-filter: blur(5px); /* frosted glass effect */
       box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
-        inset 0 0 0 3px #EFEFEF,
-        /* Change: clock hands are now brown. */
-        inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2); }
+          0 0 10px rgba(0, 0, 0, 0.3),
+          inset 0 0 5px rgba(255, 255, 255, 0.3),
+          inset 0 0 10px rgba(0, 0, 0, 0.2); }
 
 .clock-face {
       position: relative;
@@ -39,13 +40,33 @@ body {
       height: 100%;
       transform: translateY(-3px); /* account for the height of the clock hands */ }
 
+/* Change: Distinguished the second, minute, and hour hands by
+making each one of a different color. */
 .hand {
-      width: 50%;
-      height: 6px;
-      background: black;
-      position: absolute;
-      top: 50%;
-      transform-origin: 100%;
-      transform: rotate(90deg);
-      transition: all 0.05s;
-      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); }
+  height: 6px;
+  background: #3e2f1c; /* earthy brown */
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.hand.hour {
+  width: 30%;
+  background: #5a3e2b; /* darker brown */
+}
+
+.hand.minute {
+  width: 45%;
+  background: #704214; /* Subtler brown */
+}
+
+.hand.second {
+  width: 50%;
+  height: 2px;
+  background: #d72638; /* vivid red */
+}
