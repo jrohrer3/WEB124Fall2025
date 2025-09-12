@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <title>JS + CSS Clock</title>
+  <!--Change: new CSS Style implemented. This makes the clock look like 
+  it's in a dense forest, as if it were built from tree branches.-->
   <link rel="stylesheet" href="clock_style.css"> 
   <!--Change: new favicon of a clock. (Source: https://unsplash.com/photos/round-black-and-white-analog-alarm-clock-w2JtIQQXoRU)-->
   <link rel="icon" href="images/clock.png"/>
 </head>
 <body>
-    <div class="clock">
-      <div class="clock-face">
-      <!--Change: added "tick" div class to display 12 tick marks around the clock face.-->
-        <div class="tick" style="transform: rotate(30deg) translateX(13rem);">></div>
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour"></div>
+      <div class="hand minute"></div>
+      <div class="hand second"></div>
     </div>
+  </div>
   <script src="clock_script.js"></script>
 </body>
 </html>
