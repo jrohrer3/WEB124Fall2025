@@ -1,73 +1,64 @@
 /* Joel Rohrer September 15 2025 */
+/* Changes: added a forest image (source url: https://unsplash.com/photos/trees-on-forest-with-sun-rays-sp-p7uuT0tw).
+This was done to add a unique theme, as if you are surrounded in a large forest. */
 html {
-      /* Change: new forest-like background image 
-      (source url: https://unsplash.com/photos/trees-on-forest-with-sun-rays-sp-p7uuT0tw); 
-      font family changed to Times New Roman. */
-      background: #018DED url(images/forest.jpg);
-      background-size: cover;
-      font-family: 'Times New Roman';
-      text-align: center;
-      font-size: 10px; }
+  background: #018DED url(images/forest.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+  font-size: 10px;
+  position: relative;
+}
 
-/* Change: added a dark overlay to make the clock stand out 
-from the forest background */
+/* Change: an overlay was added to make the clock face stand out more. */
 html::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.3); /* subtle dark overlay */
+  background: rgba(0, 0, 0, 0.3);
   z-index: -1;
 }
 
 body {
-      margin: 0;
-      font-size: 2rem;
-      display: flex;
-      flex: 1;
-      min-height: 100vh;
-      align-items: center; }
-
-.clock {
-      /* Changes: added a soft white border, a minor glass effect & frost on glass.
-      This was done to make the clock appear amidst a looming forest. */
-      width: 30rem;
-      height: 30rem;
-      border: 20px solid rgba(255, 255, 255, 0.8); /* Subtle white border */
-      border-radius: 50%;
-      margin: 50px auto;
-      position: relative;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.1); /* Minor glass effect */
-      backdrop-filter: blur(5px); /* frosted glass effect */
-      box-shadow:
-          0 0 10px rgba(0, 0, 0, 0.3),
-          inset 0 0 5px rgba(255, 255, 255, 0.3),
-          inset 0 0 10px rgba(0, 0, 0, 0.2); }
-
-.clock-face {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform: translateY(-3px); /* account for the height of the clock hands */ }
-
-/* Change: added 12 tick marks to make the clock appear more realistic. */
-.tick {
-  position: absolute;
-  width: 2px;
-  height: 10px;
-  background: white;
-  top: 50%;
-  left: 50%;
-  transform-origin: center left;
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Change: Distinguished the second, minute, and hour hands by
-making each one of a different color. */
+/* Changes: the clock face was made to be more consistent in its uniform design. */
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 2rem;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.3),
+    inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+}
+
 .hand {
+  width: 50%;
   height: 6px;
-  background: #3e2f1c; /* earthy brown */
+  background: #3e2f1c;
   position: absolute;
   top: 50%;
+  left: 50%;
   transform-origin: 100%;
   transform: rotate(90deg);
   transition: all 0.05s;
@@ -76,18 +67,23 @@ making each one of a different color. */
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
+/* Change: the hour hand was given a dark brown color. 
+This not only makes it look unique compared to the other hands, 
+but it also fits the forest theme. */
 .hand.hour {
   width: 30%;
-  background: #5a3e2b; /* darker brown */
+  background: #5a3e2b;
 }
 
+/* Change: the minute hand was given a regular brown color. */
 .hand.minute {
   width: 45%;
-  background: #704214; /* Subtler brown */
+  background: #704214;
 }
 
+/* The second hand was given a bright red color. */
 .hand.second {
   width: 50%;
   height: 2px;
-  background: #d72638; /* vivid red */
+  background: #d72638;
 }
