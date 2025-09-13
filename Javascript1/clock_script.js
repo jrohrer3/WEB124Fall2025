@@ -1,4 +1,4 @@
-//Joel Rohrer September 15 2025
+//Joel Rohrer September 16 2025
 //Change: altered some const variable names to make more legible sense.
 const hourHand = document.querySelector('.hand.hour');
 const minuteHand = document.querySelector('.hand.minute');
