@@ -122,5 +122,5 @@ also being positioned outwards and away from the center. */
   top: 50%;
   left: 50%;
   transform-origin: center center;
-  transform: rotate(0deg) translateY(-10.5rem);
+  transform: rotate(0deg) translateY(-12rem);
 }
