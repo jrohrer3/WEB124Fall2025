@@ -112,16 +112,16 @@ making it appear distinct from the other hands. */
 also being positioned outwards and away from the center. */
 .number {
   position: absolute;
-  width: 3rem;
-  height: 3rem;
-  color: white;
+  width: 2rem;
+  height: 2rem;
+  color: black;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.2rem;
   text-align: center;
-  line-height: 3rem;
+  line-height: 2rem;
   top: 50%;
   left: 50%;
   transform-origin: center center;
-  transform: rotate(0deg) translateY(-13.5rem) rotate(0deg);
+  transform: rotate(0deg) translateY(-12rem);
   pointer-events: none;
 }
