@@ -85,18 +85,17 @@ body {
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
-/* Change: the hour hand was given a dark brown color. 
-This not only makes it look unique compared to the other hands, 
-but it also fits the forest theme. */
+/* Change: the hour hand was given a dark brown color,
+making it appear distinct from the other hands. */
 .hand.hour {
   width: 30%;
   background: #5a3e2b;
 }
 
-/* Change: the minute hand was given a regular brown color. */
+/* Change: the minute hand was given a regular orange color. */
 .hand.minute {
   width: 45%;
-  background: #704214;
+  background: #ffa500;
 }
 
 /* Change: the second hand was given a bright red color. */
