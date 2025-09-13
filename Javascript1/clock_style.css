@@ -52,14 +52,32 @@ body {
   transform: translateY(-3px);
 }
 
-.hand {
-  width: 50%;
-  height: 6px;
-  background: #3e2f1c;
+/* Change: added a center dot to visually show that each hand is centered. */
+.center-dot {
   position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #222;
+  border: 2px solid white;
+  border-radius: 50%;
   top: 50%;
   left: 50%;
-  transform-origin: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.hand {
+  /* Change: each hand is now set at a set point. This ensures that they do not appear off-center.
+  In the normal code, the "transform-origin: 100%" line of code makes each hand rotate, starting at the 
+  far-right end (instead of rotating from the clock's center > outwards).
+  Now, "transform-origin" starts from the left center, begin from the center, and grow outwards. */
+  position: absolute;
+  width: 50%;
+  height: 6px;
+  background: #3e2f1c; /* or whatever color */
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 50%; /* Rotate from the left center */
   transform: rotate(90deg);
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
