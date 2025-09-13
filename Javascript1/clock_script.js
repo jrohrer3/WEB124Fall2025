@@ -5,25 +5,18 @@ const minuteHand = document.querySelector('.hand.minute');
 const secondHand = document.querySelector('.hand.second');
 
 //Change: add clock numbers 1-12 around the clock face. 
-//"rotate(${angle}deg)" positions the number around the circle itself.
-//"translateY(-12rem)" pushes each of the numbers outward from the center.
-//Lastly, "rotate(-${angle}deg)" counter-rotates the numbers. Thus, they remain upright!
-function createClockNumbers() {
-  const clockFace = document.querySelector('.clock-face');
+//Each number is represented by variable 'i', increasing until i = 12.
+//This is done for all numbers surrounding the clock face. 
+//Their positions and scale are largely handled via CSS, and will also remain vertical!
+const clockFace = document.querySelector('.clock-face');
 
-  for (let i = 1; i <= 12; i++) {
-    const number = document.createElement('div');
-    number.classList.add('number');
-    number.textContent = i;
-
-    const angle = i * 30; // 360 / 12
-    number.style.transform = `rotate(${angle}deg) translateY(-12rem) rotate(-${angle}deg)`;
-
-    clockFace.appendChild(number);
-  }
+for (let i = 1; i <= 12; i++) {
+  const number = document.createElement('div');
+  number.classList.add('number');
+  number.style.setProperty('--i', i);
+  number.textContent = i;
+  clockFace.appendChild(number);
 }
-
-createClockNumbers();
 
 function setDate() {
   const now = new Date();
