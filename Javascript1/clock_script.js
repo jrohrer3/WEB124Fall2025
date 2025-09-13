@@ -4,22 +4,25 @@ const hourHand = document.querySelector('.hand.hour');
 const minuteHand = document.querySelector('.hand.minute');
 const secondHand = document.querySelector('.hand.second');
 
-//Changes: added a function to generate 12 tick marks. 
-//Each tick is rotated by 30 degrees (360/12). 
-//They are then placed outwards [translateY(-14rem)].
-//This general position of the ticks is then placed on the clock face itself.
-function createClockTicks() {
+//Change: add clock numbers 1-12 around the clock face. 
+//"rotate(${angle}deg)" positions the number on the circle itself.
+//"translateY(-12rem)" pushes each of the numbers outward from the center.
+//Lastly, "rotate(-${angle}deg)" counter-rotates the numbers. Thus, they remain upright!
+function createClockNumbers() {
   const clockFace = document.querySelector('.clock-face');
 
-  for (let i = 0; i < 12; i++) {
-    const tick = document.createElement('div');
-    tick.classList.add('tick');
-    tick.style.transform = `rotate(${i * 30}deg) translateY(-14rem)`;
-    clockFace.appendChild(tick);
+  for (let i = 1; i <= 12; i++) {
+    const number = document.createElement('div');
+    number.classList.add('number');
+    number.textContent = i;
+
+    const angle = i * 30; // 360 / 12
+    number.style.transform = `rotate(${angle}deg) translateY(-12rem) rotate(-${angle}deg)`;
+
+    clockFace.appendChild(number);
   }
 }
 
-createClockTicks();
 function setDate() {
   const now = new Date();
   const seconds = now.getSeconds();
