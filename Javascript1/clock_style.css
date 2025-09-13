@@ -1,6 +1,6 @@
 /* Joel Rohrer September 16 2025 */
 /* Changes: added a forest image (source url: https://unsplash.com/photos/trees-on-forest-with-sun-rays-sp-p7uuT0tw).
-This was done to add a unique theme, as if you are surrounded in a large forest. */
+This was done to add a unique theme, as if you are surrounded by many trees in a large forest. */
 html {
   background: #018DED url(images/forest.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -70,11 +70,11 @@ body {
   /* Change: each hand is now set at a set point. This ensures that they do not appear off-center.
   In the normal code, the "transform-origin: 100%" line of code makes each hand rotate, starting at the 
   far-right end (instead of rotating from the clock's center > outwards).
-  Now, "transform-origin" starts from the left center, begin from the center, and grow outwards. */
+  Now, "transform-origin" rotates the hands from the left end, begin from the clock's center, and grow outwards. */
   position: absolute;
   width: 50%;
   height: 6px;
-  background: #3e2f1c; /* or whatever color */
+  background: #3e2f1c;
   top: 50%;
   left: 50%;
   transform-origin: 0% 50%; /* Rotate from the left center */
@@ -92,13 +92,15 @@ making it appear distinct from the other hands. */
   background: #5a3e2b;
 }
 
-/* Change: the minute hand was given a regular orange color. */
+/* Change: the minute hand was given a regular orange color,
+making it appear distinct from the other hands. */
 .hand.minute {
   width: 45%;
   background: #ffa500;
 }
 
-/* Change: the second hand was given a bright red color. */
+/* Change: the second hand was given a bright red color,
+making it appear distinct from the other hands. */
 .hand.second {
   width: 50%;
   height: 2px;
