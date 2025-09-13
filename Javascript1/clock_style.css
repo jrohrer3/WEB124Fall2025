@@ -108,19 +108,19 @@ making it appear distinct from the other hands. */
 }
 
 /* Change: added numbers (1-12) around the clock face. 
-"rotate(0deg) translateY(-12rem)" helps to keep all of the numbers stay upright, while 
+"rotate(0deg) translateY(-10.5rem)" helps to keep all of the numbers stay upright, while 
 also being positioned outwards and away from the center. */
 .number {
   position: absolute;
-  width: 20rem;
-  height: 20rem;
+  width: 3rem;
+  height: 3rem;
   color: black;
   font-weight: bold;
-  font-size: 20rem;
+  font-size: 2rem;
   text-align: center;
-  line-height: 20rem;
+  line-height: 3rem;
   top: 50%;
   left: 50%;
   transform-origin: center center;
-  transform: rotate(0deg) translateY(-12rem);
+  transform: rotate(0deg) translateY(-10.5rem);
 }
