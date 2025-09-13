@@ -5,7 +5,7 @@ const minuteHand = document.querySelector('.hand.minute');
 const secondHand = document.querySelector('.hand.second');
 
 //Change: add clock numbers 1-12 around the clock face. 
-//"rotate(${angle}deg)" positions the number on the circle itself.
+//"rotate(${angle}deg)" positions the number around the circle itself.
 //"translateY(-12rem)" pushes each of the numbers outward from the center.
 //Lastly, "rotate(-${angle}deg)" counter-rotates the numbers. Thus, they remain upright!
 function createClockNumbers() {
