@@ -1,4 +1,4 @@
-/* Joel Rohrer September 16 2025 */
+/* Joel Rohrer September 15 2025 */
 /* Changes: added a forest image (source url: https://unsplash.com/photos/trees-on-forest-with-sun-rays-sp-p7uuT0tw).
 This was done to add a unique theme, as if you are surrounded by many trees in a large forest. */
 html {
@@ -109,21 +109,19 @@ making it appear distinct from the other hands. */
 
 /* Change: added numbers (1-12) around the clock face. 
 "rotate(calc(var(--i) * 30deg))", and "translateY(-13rem)" helps to keep all of the numbers stay upright, while 
-also being positioned outwards and away from the center. */
+also being symmetrical with the outer clock face. */
 .number {
   position: absolute;
-  width: 2rem;
-  height: 2rem;
   color: black;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: center;
-  line-height: 2rem;
   top: 50%;
   left: 50%;
-  transform: rotate(calc(var(--i) * 30deg)) 
-             translateY(-13rem) 
-             rotate(calc(var(--i) * -30deg));
+  transform: rotate(calc(var(--i) * 30deg))
+             translateY(-13rem)
+             rotate(calc(var(--i) * -30deg))
+             translate(-50%, -50%); /* precisely centers the 12 numbers */
   transform-origin: center center;
   pointer-events: none;
 }
