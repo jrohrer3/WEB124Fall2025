@@ -14,7 +14,7 @@ const isVeteran = false;
 console.log('isVeteran:', isVeteran);
 
 // 4) An array to store the names of three of my friends
-const friendNames = ['Ava Martinez', 'Samir Patel', 'Casey Nguyen'];
+const friendNames = ['Sam', 'Max', 'Rose'];
 console.log('friendNames:', friendNames);
 
 // 5) An array to store the desired annual salary for my three friends
@@ -25,8 +25,8 @@ console.log('friendDesiredSalaries:', friendDesiredSalaries);
 // 6) A literal object to store the first name, last name, 
 // and desired annual salary of yet another friend
 const anotherFriend = {
-  firstName: 'Alex',
-  lastName: 'Morgan',
+  firstName: 'Mary',
+  lastName: 'Jane',
   desiredSalary: 60000
 };
 console.log('anotherFriend:', anotherFriend);
