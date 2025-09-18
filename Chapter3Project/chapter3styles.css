@@ -1,5 +1,7 @@
 /* Joel Rohrer September 22 2025 */
 body { background-color: black; }
+h1, h2 { color: white;
+        font-family: Arial; }
 p { color: white; 
     font-weight: italic; 
     font-family: Times New Roman; }
