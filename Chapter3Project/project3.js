@@ -12,7 +12,7 @@ let isVeteran = false; // Change to true if veteran
 console.log("Veteran Status:", isVeteran);
 
 // 4. Array of friends' names
-let friends = ["Alice", "Brian", "Charlie"];
+let friends = ["Alice Vanna", "Brian Corwick", "Charlie Hathaway"];
 console.log("Friends:", friends);
 
 // 5. Array of friends' desired salaries
