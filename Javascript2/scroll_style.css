@@ -1,1 +1,75 @@
+/* Joel Rohrer September 29 2025 */
+/* Global Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #ffc600;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+/* Layout */
+main.site-wrap {
+  max-width: 700px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 40px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Image Alignment */
+.align-left {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+.align-right {
+  float: right;
+  margin: 0 0 20px 20px;
+}
+
+/* Slide-in Animation */
+.slide-in {
+  opacity: 0;
+  transform: translateX(30%) scale(0.95);
+  transition: all 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.align-left.slide-in {
+  transform: translateX(-30%) scale(0.95);
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+@media (max-width: 600px) {
+  .align-left,
+  .align-right {
+    float: none;
+    display: block;
+    margin: 20px auto;
+  }
+}
 
