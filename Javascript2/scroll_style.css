@@ -5,35 +5,69 @@
 }
 
 html {
-  background: #ffc600;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Trebuchet MS', 'Helvetica Neue', sans-serif;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
   scroll-behavior: smooth;
+  background: linear-gradient(to bottom, #87CEEB 0%, #fceabb 100%);
+  color: #2c3e50;
 }
 
 body {
   margin: 0;
 }
 
+/* Header */
+.site-header {
+  text-align: center;
+  background: linear-gradient(135deg, #fdbb2d, #22c1c3);
+  color: white;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.site-header .tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
 /* Layout */
 main.site-wrap {
-  max-width: 700px;
-  margin: 100px auto;
-  background: #fff;
+  max-width: 800px;
+  margin: 60px auto;
+  background: #ffffffdd;
+  backdrop-filter: blur(6px);
   padding: 40px;
   text-align: justify;
-  line-height: 1.6;
+  line-height: 1.7;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-h1 {
+h2 {
   margin-top: 0;
+  text-align: center;
+  color: #0077b6;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #00b4d8;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
+/* Images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Image Alignment */
@@ -51,7 +85,7 @@ img {
 .slide-in {
   opacity: 0;
   transform: translateX(30%) scale(0.95);
-  transition: all 0.6s ease-out;
+  transition: all 0.7s ease-out;
   will-change: transform, opacity;
 }
 
@@ -64,6 +98,19 @@ img {
   transform: translateX(0) scale(1);
 }
 
+/* Footer */
+.site-footer {
+  text-align: center;
+  background: linear-gradient(to right, #22c1c3, #fdbb2d);
+  color: white;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   .align-left,
   .align-right {
@@ -71,5 +118,10 @@ img {
     display: block;
     margin: 20px auto;
   }
+
+  .site-header h1 {
+    font-size: 2rem;
+  }
 }
+
 
