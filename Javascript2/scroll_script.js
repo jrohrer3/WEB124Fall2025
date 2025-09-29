@@ -1,6 +1,5 @@
 // Joel Rohrer September 30 2025
-// Debounce utility
-// Purpose: prevents a function from running too often
+// Debounce utility: prevents function from executing too often
 const debounce = (func, wait = 20, immediate = true) => {
   let timeout;
   return function executedFunction(...args) {
@@ -29,18 +28,17 @@ function checkSlide() {
   sliderImages.forEach(img => {
     const rect = img.getBoundingClientRect();
 
-    // Improved visibility calculation:
-    // The image is considered "half shown" when it is at least halfway visible in viewport
+    // Image is considered visible when half of it enters the viewport
     const isHalfShown =
-      rect.top < viewportHeight * 0.75 &&  // triggers earlier
+      rect.top < viewportHeight * 0.75 &&
       rect.bottom > viewportHeight * 0.25;
 
     img.classList.toggle('active', isHalfShown);
   });
 }
 
-// Use passive listeners for scroll for better performance
+// Use passive listeners for smoother scrolling
 window.addEventListener('scroll', debounce(checkSlide, 50), { passive: true });
 
 // Run once on page load to handle images already in view
-window.addEventListener('load', checkSlide);
+window.addEventListener('DOMContentLoaded', checkSlide);
