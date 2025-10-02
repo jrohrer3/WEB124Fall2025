@@ -14,7 +14,7 @@ function toggleActive(e) {
 panels.forEach(panel => panel.addEventListener('click', toggleOpen));
 panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 
-// Optional: Keyboard navigation (basic setup)
+// Optional Keyboard Navigation
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') console.log("Next panel →");
   if (e.key === 'ArrowLeft') console.log("Previous panel ←");
