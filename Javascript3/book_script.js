@@ -1,28 +1,21 @@
 // Joel Rohrer October 7 2025
-const pages = document.querySelectorAll('.page');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
+const panels = document.querySelectorAll('.panel');
 
-let current = 0;
-
-function showPage(index) {
-  pages.forEach((page, i) => {
-    page.classList.toggle('active', i === index);
-  });
+function toggleOpen() {
+  console.log('Hello');
+  this.classList.toggle('open');
 }
 
-function nextPage() {
-  current = (current + 1) % pages.length;
-  showPage(current);
+function toggleActive(e) {
+  console.log(e.propertyName);
+  if (e.propertyName.includes('flex')) {
+    this.classList.toggle('open-active');
+  }
 }
 
-function prevPage() {
-  current = (current - 1 + pages.length) % pages.length;
-  showPage(current);
-}
+panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 
-nextBtn.addEventListener('click', nextPage);
-prevBtn.addEventListener('click', prevPage);
 
 // Keyboard Navigation
 document.addEventListener('keydown', (e) => {
