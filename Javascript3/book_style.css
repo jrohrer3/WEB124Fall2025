@@ -21,8 +21,8 @@ body {
   display: flex;
   flex-direction: row;
 }
-/* Change: made each of the five panels load with bright background colors.
-This ensures the webpage loads more smoothly. 
+/* Change: made each of the five panels load with bright background hues.
+This ensures the webpage loads more smoothly using these Fallback colors. 
 .panel {
   background-color: #6B0F9C; /* fallback */
   box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
