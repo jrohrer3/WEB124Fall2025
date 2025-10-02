@@ -1,8 +1,9 @@
 /* Joel Rohrer October 7 2025 */
+
 html {
   box-sizing: border-box;
   background: #ffc600;
-  font-family: 'helvetica neue';
+  font-family: 'helvetica neue', sans-serif;
   font-size: 20px;
   font-weight: 200;
 }
@@ -19,10 +20,11 @@ body {
   min-height: 100vh;
   overflow: hidden;
   display: flex;
+  flex-direction: row;
 }
 
 .panel {
-  background: #6B0F9C;
+  background-color: #6B0F9C; /* fallback */
   box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
   color: white;
   text-align: center;
@@ -38,15 +40,35 @@ body {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
-.panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-.panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-.panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-.panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-.panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+.panel1 {
+  background-color: #f44336;
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1500');
+}
 
-/* Flex Items */
+.panel2 {
+  background-color: #3f51b5;
+  background-image: url('https://images.unsplash.com/photo-1532274402917-5aadf881bdfb?w=1500');
+}
+
+.panel3 {
+  background-color: #4caf50;
+  background-image: url('https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?w=1500');
+}
+
+.panel4 {
+  background-color: #ff9800;
+  background-image: url('https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?w=1500');
+}
+
+.panel5 {
+  background-color: #009688;
+  background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1500');
+}
+
+/* Flex Item Animation */
 .panel > * {
   margin: 0;
   width: 100%;
@@ -89,8 +111,22 @@ body {
   font-size: 40px;
 }
 
+/* Responsive Layout */
 @media only screen and (max-width: 600px) {
+  .panels {
+    flex-direction: column;
+  }
+
+  .panel {
+    min-height: 20vh;
+  }
+
   .panel p {
     font-size: 1em;
   }
+
+  .panel p:nth-child(2) {
+    font-size: 2em;
+  }
 }
+
