@@ -2,7 +2,7 @@
 html {
   box-sizing: border-box;
   background: #ffc600;
-  font-family: 'helvetica neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 20px;
   font-weight: 200;
 }
@@ -11,13 +11,11 @@ body {
   margin: 0;
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: inherit;
 }
 
-/* Change: made each of the panels transition more smoothly, and 
-"flex-direction: column" makes all panels appear visibly 
-when the page fully loads into view. */
+/* Panel Container */
 .panels {
   display: flex;
   flex-direction: row;
@@ -25,43 +23,49 @@ when the page fully loads into view. */
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
+
 .panel {
   flex: 0 0 100vw;
   scroll-snap-align: start;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
 }
 
+/* Background Images */
 .panel1 {
-  background-color: #f44336;
   /* Image 1 Source: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI*/
   background-image: url('images/Sky.jpg');
 }
-
 .panel2 {
-  background-color: #3f51b5;
   /* Image 2 Source: https://unsplash.com/photos/three-pupas-VMKBFR6r_jg */
   background-image: url('images/Evolution.jpg');
 }
-
 .panel3 {
-  background-color: #4caf50;
   /* Image 3 Source: https://unsplash.com/photos/a-blue-sky-with-clouds-iKmKCrtnu6Y */
   background-image: url('images/Dreamscape.jpg');
 }
-
 .panel4 {
-  background-color: #ff9800;
   /* Image 4 Source: https://unsplash.com/photos/gray-asphalt-road-between-green-trees-during-daytime-0OVtT5MuPcI */
   background-image: url('images/Long_Road.jpg');
 }
-
 .panel5 {
-  background-color: #009688;
   /* Image 5 Source: https://unsplash.com/photos/sepia-photography-of-sunlight-JVtlG3dU1yY */
-  background-image: url('Sunshine.jpg');
+  background-image: url('images/Sunshine.jpg');
 }
 
-/* Flex Item Animation */
+/* Dark overlay for text contrast */
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
 .panel > * {
+  position: relative;
+  z-index: 1;
   margin: 0;
   width: 100%;
   transition: transform 0.5s;
@@ -69,32 +73,36 @@ when the page fully loads into view. */
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
+/* Animations */
 .panel > *:first-child {
   transform: translateY(-100%);
 }
-
 .panel.open-active > *:first-child {
   transform: translateY(0);
 }
-
 .panel > *:last-child {
   transform: translateY(100%);
 }
-
 .panel.open-active > *:last-child {
   transform: translateY(0);
 }
 
-.panel p {
+/* Typography */
+.panel h2,
+.panel h3 {
   text-transform: uppercase;
   font-family: 'Amatic SC', cursive;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-  font-size: 2em;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72),
+               0 0 14px rgba(0, 0, 0, 0.45);
 }
 
-.panel p:nth-child(2) {
+.panel h3 {
+  font-size: 2em;
+}
+.panel h2 {
   font-size: 4em;
 }
 
@@ -103,8 +111,7 @@ when the page fully loads into view. */
   font-size: 40px;
 }
 
-/* Responsive Layout: the panels will be stacked 
-vertically for Mobile Devices. */
+/* Responsive Layout */
 @media only screen and (max-width: 600px) {
   .panels {
     flex-direction: column;
@@ -114,12 +121,10 @@ vertically for Mobile Devices. */
     min-height: 20vh;
   }
 
-  .panel p {
+  .panel h3 {
     font-size: 1em;
   }
-
-  .panel p:nth-child(2) {
+  .panel h2 {
     font-size: 2em;
   }
 }
-
