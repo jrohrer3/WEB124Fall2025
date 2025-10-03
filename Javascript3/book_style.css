@@ -45,28 +45,32 @@ This ensures the webpage loads more smoothly using these Fallback colors.
 
 .panel1 {
   background-color: #f44336;
-  /* All images for each panel came from the Unsplash website. */
-  background-image: url('https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI');
+  /* Image 1 Source: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI*/
+  background-image: url('images/Sky.jpg');
 }
 
 .panel2 {
   background-color: #3f51b5;
-  background-image: url('https://unsplash.com/photos/three-pupas-VMKBFR6r_jg');
+  /* Image 2 Source: https://unsplash.com/photos/three-pupas-VMKBFR6r_jg */
+  background-image: url('images/Evolution.jpg');
 }
 
 .panel3 {
   background-color: #4caf50;
-  background-image: url('https://unsplash.com/photos/black-sailing-boat-digital-wallpaper-DKix6Un55mw');
+  /* Image 3 Source: https://unsplash.com/photos/black-sailing-boat-digital-wallpaper-DKix6Un55mw */
+  background-image: url('images/Dreamscape.jpg');
 }
 
 .panel4 {
   background-color: #ff9800;
-  background-image: url('https://unsplash.com/photos/gray-asphalt-road-between-green-trees-during-daytime-0OVtT5MuPcI');
+  /* Image 4 Source: https://unsplash.com/photos/gray-asphalt-road-between-green-trees-during-daytime-0OVtT5MuPcI */
+  background-image: url('images/Long_Road.jpg');
 }
 
 .panel5 {
   background-color: #009688;
-  background-image: url('https://unsplash.com/photos/sepia-photography-of-sunlight-JVtlG3dU1yY');
+  /* Image 5 Source: https://unsplash.com/photos/sepia-photography-of-sunlight-JVtlG3dU1yY */
+  background-image: url('Sunshine.jpg');
 }
 
 /* Flex Item Animation */
