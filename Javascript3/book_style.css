@@ -15,32 +15,19 @@ body {
   box-sizing: inherit;
 }
 
+/* Change: made each of the panels transition more smoothly, and 
+"flex-direction: column" makes all panels appear visibly 
+when the page fully loads into view. */
 .panels {
-  min-height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
-/* Change: made each of the five panels load with bright background hues.
-This ensures the webpage loads more smoothly using these Fallback colors. 
 .panel {
-  background-color: #6B0F9C; /* fallback */
-  box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
-  color: white;
-  text-align: center;
-  align-items: center;
-  transition:
-    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-    background 0.2s;
-  font-size: 20px;
-  background-size: cover;
-  background-position: center;
-  flex: 1;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
+  flex: 0 0 100vw;
+  scroll-snap-align: start;
 }
 
 .panel1 {
