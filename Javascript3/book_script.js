@@ -1,5 +1,6 @@
 // Joel Rohrer October 7 2025
 const panels = document.querySelectorAll('.panel');
+let currentIndex = 0;
 
 function toggleOpen() {
   this.classList.toggle('open');
@@ -16,6 +17,18 @@ panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 
 // Optional Keyboard Navigation
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') console.log("Next panel →");
-  if (e.key === 'ArrowLeft') console.log("Previous panel ←");
+  panels[currentIndex]?.classList.remove('open', 'open-active');
+
+  if (e.key === 'ArrowRight') {
+    currentIndex = (currentIndex + 1) % panels.length;
+  } else if (e.key === 'ArrowLeft') {
+    currentIndex = (currentIndex - 1 + panels.length) % panels.length;
+  } else {
+    return;
+  }
+
+  const panel = panels[currentIndex];
+  panel.classList.add('open');
+  // Delay activating text transition
+  setTimeout(() => panel.classList.add('open-active'), 300);
 });
