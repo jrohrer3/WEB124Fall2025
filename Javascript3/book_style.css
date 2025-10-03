@@ -46,27 +46,27 @@ This ensures the webpage loads more smoothly using these Fallback colors.
 .panel1 {
   background-color: #f44336;
   /* All images for each panel came from the Unsplash website. */
-  background-image: url('https://unsplash.com/photos/group-of-people-dancing-6Woj_wozqmA');
+  background-image: url('https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI');
 }
 
 .panel2 {
   background-color: #3f51b5;
-  background-image: url('https://unsplash.com/photos/copper-colored-coins-on-in-persons-hands-TBHOuN6URGU');
+  background-image: url('https://unsplash.com/photos/three-pupas-VMKBFR6r_jg');
 }
 
 .panel3 {
   background-color: #4caf50;
-  background-image: url('https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?w=1500');
+  background-image: url('https://unsplash.com/photos/black-sailing-boat-digital-wallpaper-DKix6Un55mw');
 }
 
 .panel4 {
   background-color: #ff9800;
-  background-image: url('https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?w=1500');
+  background-image: url('https://unsplash.com/photos/gray-asphalt-road-between-green-trees-during-daytime-0OVtT5MuPcI');
 }
 
 .panel5 {
   background-color: #009688;
-  background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1500');
+  background-image: url('https://unsplash.com/photos/sepia-photography-of-sunlight-JVtlG3dU1yY');
 }
 
 /* Flex Item Animation */
