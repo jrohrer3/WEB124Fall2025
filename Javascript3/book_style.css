@@ -6,11 +6,9 @@ html {
   font-size: 20px;
   font-weight: 200;
 }
-
 body {
   margin: 0;
 }
-
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -19,44 +17,41 @@ body {
 .panels {
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  height: 100vh;
+  overflow: hidden;
 }
 
+/* Panels */
 .panel {
-  flex: 0 0 100vw;
-  scroll-snap-align: start;
-  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  position: relative;
+  transition: flex-grow 0.5s ease-in-out;
+  will-change: flex-grow, transform;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-/* Background Images */
-.panel1 {
-  /* Image 1 Source: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI*/
-  background-image: url('images/Sky.jpg');
-}
-.panel2 {
-  /* Image 2 Source: https://unsplash.com/photos/three-pupas-VMKBFR6r_jg */
-  background-image: url('images/Evolution.jpg');
-}
-.panel3 {
-  /* Image 3 Source: https://unsplash.com/photos/a-blue-sky-with-clouds-iKmKCrtnu6Y */
-  background-image: url('images/Dreamscape.jpg');
-}
-.panel4 {
-  /* Image 4 Source: https://unsplash.com/photos/gray-asphalt-road-between-green-trees-during-daytime-0OVtT5MuPcI */
-  background-image: url('images/Long_Road.jpg');
-}
-.panel5 {
-  /* Image 5 Source: https://unsplash.com/photos/sepia-photography-of-sunlight-JVtlG3dU1yY */
-  background-image: url('images/Sunshine.jpg');
-}
+/* Backgrounds */
+/* Image 1 Source: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI*/
+.panel1 { background-image: url('images/Sky.jpg'); }
+/* Image 2 Source: https://unsplash.com/photos/three-pupas-VMKBFR6r_jg */
+.panel2 { background-image: url('images/Evolution.jpg'); }
+/* Image 3 Source: https://unsplash.com/photos/a-blue-sky-with-clouds-iKmKCrtnu6Y */
+.panel3 { background-image: url('images/Dreamscape.jpg'); }
+/* Image 4 Source: https://unsplash.com/photos/gray-asphalt-road-between-green-trees-during-daytime-0OVtT5MuPcI */
+.panel4 { background-image: url('images/Long_Road.jpg'); }
+/* Image 5 Source: https://unsplash.com/photos/sepia-photography-of-sunlight-JVtlG3dU1yY */
+.panel5 { background-image: url('images/Sunshine.jpg'); }
 
-/* Dark overlay for text contrast */
+/* Overlay for text contrast */
 .panel::before {
   content: '';
   position: absolute;
@@ -67,27 +62,21 @@ body {
   position: relative;
   z-index: 1;
   margin: 0;
-  width: 100%;
-  transition: transform 0.5s;
-  flex: 1 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-/* Animations */
-.panel > *:first-child {
-  transform: translateY(-100%);
-}
-.panel.open-active > *:first-child {
+/* Animate text in/out */
+.panel.open-active > * {
+  opacity: 1;
   transform: translateY(0);
 }
-.panel > *:last-child {
-  transform: translateY(100%);
-}
-.panel.open-active > *:last-child {
-  transform: translateY(0);
+
+/* Expanded panel */
+.panel.open {
+  flex: 5;
 }
 
 /* Typography */
@@ -98,33 +87,17 @@ body {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.72),
                0 0 14px rgba(0, 0, 0, 0.45);
 }
+.panel h3 { font-size: 2em; }
+.panel h2 { font-size: 4em; }
 
-.panel h3 {
-  font-size: 2em;
-}
-.panel h2 {
-  font-size: 4em;
-}
-
-.panel.open {
-  flex: 5;
-  font-size: 40px;
-}
-
-/* Responsive Layout */
+/* Responsive */
 @media only screen and (max-width: 600px) {
   .panels {
     flex-direction: column;
   }
-
   .panel {
     min-height: 20vh;
   }
-
-  .panel h3 {
-    font-size: 1em;
-  }
-  .panel h2 {
-    font-size: 2em;
-  }
+  .panel h3 { font-size: 1.2em; }
+  .panel h2 { font-size: 2em; }
 }
