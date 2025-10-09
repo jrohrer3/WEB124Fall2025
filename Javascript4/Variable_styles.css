@@ -1,0 +1,40 @@
+/* Joel Rohrer October 14 2025 */
+/* CSS Variables (custom properties) defined in :root scope 
+   to enable global theming */
+:root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px;
+}
+
+/* Targeting the image to apply CSS variable-driven styles */
+img {
+  padding: var(--spacing);
+  background-color: var(--base);
+  filter: blur(var(--blur));
+}
+
+/* Highlighted text uses base color */
+.hl {
+  color: var(--base);
+}
+
+/* Basic page styling */
+body {
+  text-align: center;
+  background: #193549;
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+/* Control panel styling */
+.controls {
+  margin-bottom: 50px;
+}
+
+input[type="range"],
+input[type="color"] {
+  width: 100px;
+}
