@@ -10,14 +10,16 @@ function handleUpdate() {
 
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
 
-// Random Unsplash image
+// Random Unsplash image with unique file name
 const img = document.getElementById('random-image');
+
 function loadRandomImage() {
-  const randomNumber = Math.floor(Math.random() * 1000);
-  img.src = `https://source.unsplash.com/random/800x500?sig=${randomNumber}`;
+  // Unique identifier: random number + timestamp
+  const uniqueId = Date.now() + '-' + Math.floor(Math.random() * 10000);
+  img.src = `https://source.unsplash.com/random/800x500?sig=${uniqueId}`;
 }
 
-// Load the image
+// Load the image initially
 loadRandomImage();
 
 // Ensure image is visible
