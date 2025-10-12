@@ -10,3 +10,8 @@ function handleUpdate() {
 
 // Use 'input' event for real-time feedback (includes mouse move & change).
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
+
+// Set a random Unsplash image
+const randomNumber = Math.floor(Math.random() * 1000); // Random number 0–999
+const img = document.getElementById('random-image');
+img.src = `https://source.unsplash.com/random/800x500?sig=${randomNumber}`;
