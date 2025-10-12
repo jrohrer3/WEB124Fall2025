@@ -1,4 +1,3 @@
-// Joel Rohrer October 14 2025
 const presetImages = [
   'images/image1.jpg',
   'images/image2.jpg',
@@ -22,14 +21,17 @@ const presetImages = [
 // Image 8 Source Link: https://unsplash.com/photos/a-close-up-of-a-wall-with-a-pattern-on-it-YajdCee-H88
 // Image 9 Source Link: https://unsplash.com/photos/black-and-white-floor-tiles-X-3CqrZd6R0
 // Image 10 Source Link: https://unsplash.com/photos/multicolored-textiles-roof-CdR2290-KAo
+
 const img = document.getElementById('random-image');
-let currentIndex = 0;
+
+// Pick a random starting index for initial load
+let currentIndex = Math.floor(Math.random() * presetImages.length);
 
 function loadNextImage() {
   // Add fade-out class
   img.classList.add('fade-out');
 
-  // Wait for transition to finish (0.5s)
+  // Wait for fade-out transition
   setTimeout(() => {
     // Change image source
     img.src = presetImages[currentIndex];
@@ -39,9 +41,9 @@ function loadNextImage() {
     currentIndex++;
     if (currentIndex >= presetImages.length) currentIndex = 0;
 
-    // Fade in
+    // Fade-in effect
     img.classList.remove('fade-out');
-  }, 500); // matches the CSS transition duration
+  }, 500); // matches CSS transition duration
 }
 
 // Initial load
@@ -57,10 +59,10 @@ img.onerror = () => console.error("Failed to load image.");
 // Random background color
 document.body.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
 
-// Random font size
+// Random heading font size
 document.querySelector('h2').style.fontSize = `${Math.floor(Math.random()*30 + 30)}px`;
 
-// Random quotes
+// Random quote
 const quotes = [
   "Life is short, smile while you still have teeth.",
   "Do what you love, love what you do.",
