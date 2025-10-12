@@ -10,24 +10,37 @@ function handleUpdate() {
 
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
 
-// Random Unsplash image
+// Preset images
+const presetImages = [
+  'images/image1.jpg',
+  'images/image2.jpg',
+  'images/image3.jpg',
+  'images/image4.jpg',
+  'images/image5.jpg',
+  'images/image6.jpg',
+  'images/image7.jpg',
+  'images/image8.jpg',
+  'images/image9.jpg',
+  'images/image10.jpg'
+];
+
 const img = document.getElementById('random-image');
 
-function loadRandomImage() {
-  const uniqueId = Date.now() + '-' + Math.floor(Math.random() * 10000);
-  img.src = `https://source.unsplash.com/random/800x500?sig=${uniqueId}`;
-  img.alt = "Random Unsplash Image"; // fallback if image fails
+function loadRandomPresetImage() {
+  const randomIndex = Math.floor(Math.random() * presetImages.length);
+  img.src = presetImages[randomIndex];
+  img.alt = `Preset Image ${randomIndex + 1}`;
 }
 
 // Initial load
-loadRandomImage();
+loadRandomPresetImage();
 
 // Reload button functionality
-document.getElementById('reload-image').addEventListener('click', loadRandomImage);
+document.getElementById('reload-image').addEventListener('click', loadRandomPresetImage);
 
 // Log load success or failure
 img.onload = () => console.log("Image loaded successfully!");
-img.onerror = () => console.error("Failed to load Unsplash image.");
+img.onerror = () => console.error("Failed to load image.");
 
 // Random background color
 function randomColor() {
