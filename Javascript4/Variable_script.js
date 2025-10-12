@@ -13,36 +13,29 @@ const presetImages = [
 
 const img = document.getElementById('random-image');
 
-// Get last index from localStorage
+// Pick a random starting index for initial load
 let lastIndex = localStorage.getItem('lastImageIndex');
 lastIndex = lastIndex !== null ? parseInt(lastIndex) : -1;
 
-// Pick a random index different from the last one
 let currentIndex;
 do {
   currentIndex = Math.floor(Math.random() * presetImages.length);
 } while (currentIndex === lastIndex);
 
-// Save the current index to localStorage
 localStorage.setItem('lastImageIndex', currentIndex);
 
+// Load next image with fade
 function loadNextImage() {
-  // Add fade-out class
   img.classList.add('fade-out');
-
-  // Wait for fade-out transition
   setTimeout(() => {
-    // Change image source
     img.src = presetImages[currentIndex];
     img.alt = `Preset Image ${currentIndex + 1}`;
 
-    // Increment index for next reload
     currentIndex++;
     if (currentIndex >= presetImages.length) currentIndex = 0;
 
-    // Fade-in effect
     img.classList.remove('fade-out');
-  }, 500); // matches CSS transition duration
+  }, 500);
 }
 
 // Initial load
@@ -51,9 +44,30 @@ loadNextImage();
 // Reload button
 document.getElementById('reload-image').addEventListener('click', loadNextImage);
 
-// Optional: log success/failure
-img.onload = () => console.log("Image loaded successfully!");
-img.onerror = () => console.error("Failed to load image.");
+// Controls affecting image directly
+const inputs = document.querySelectorAll('.controls input');
+
+function handleUpdate() {
+  const value = this.value;
+  const suffix = this.dataset.sizing || '';
+
+  switch(this.name) {
+    case 'spacing':
+      img.style.padding = value + suffix;
+      break;
+    case 'blur':
+      img.style.filter = `blur(${value}px)`; // override CSS variable
+      break;
+    case 'base':
+      img.style.backgroundColor = value;
+      break;
+  }
+
+  // Update root CSS variables for consistency
+  document.documentElement.style.setProperty(`--${this.name}`, value + suffix);
+}
+
+inputs.forEach(input => input.addEventListener('input', handleUpdate));
 
 // Random background color
 document.body.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
@@ -71,9 +85,7 @@ const quotes = [
 ];
 document.getElementById('random-text').textContent = quotes[Math.floor(Math.random()*quotes.length)];
 
-// Random image rotation
+// Random rotation and shadow for image
 document.documentElement.style.setProperty('--rotation', `${Math.floor(Math.random() * 20 - 10)}deg`);
-
-// Random image shadow
 const shadowSize = Math.floor(Math.random() * 20 + 5);
 document.documentElement.style.setProperty('--shadow', `${shadowSize}px ${shadowSize}px 30px rgba(0,0,0,0.6)`);
