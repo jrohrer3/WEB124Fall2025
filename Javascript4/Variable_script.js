@@ -24,8 +24,18 @@ const presetImages = [
 
 const img = document.getElementById('random-image');
 
-// Pick a random starting index for initial load
-let currentIndex = Math.floor(Math.random() * presetImages.length);
+// Get last index from localStorage
+let lastIndex = localStorage.getItem('lastImageIndex');
+lastIndex = lastIndex !== null ? parseInt(lastIndex) : -1;
+
+// Pick a random index different from the last one
+let currentIndex;
+do {
+  currentIndex = Math.floor(Math.random() * presetImages.length);
+} while (currentIndex === lastIndex);
+
+// Save the current index to localStorage
+localStorage.setItem('lastImageIndex', currentIndex);
 
 function loadNextImage() {
   // Add fade-out class
