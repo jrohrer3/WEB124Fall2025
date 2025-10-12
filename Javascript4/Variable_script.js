@@ -25,18 +25,24 @@ const presetImages = [
 ];
 
 const img = document.getElementById('random-image');
+let currentIndex = 0;
 
-function loadRandomPresetImage() {
-  const randomIndex = Math.floor(Math.random() * presetImages.length);
-  img.src = presetImages[randomIndex];
-  img.alt = `Preset Image ${randomIndex + 1}`;
+// Load the next preset image sequentially
+function loadNextImage() {
+  img.src = presetImages[currentIndex];
+  img.alt = `Preset Image ${currentIndex + 1}`;
+  
+  currentIndex++;
+  if (currentIndex >= presetImages.length) {
+    currentIndex = 0; // loop back to the first image
+  }
 }
 
 // Initial load
-loadRandomPresetImage();
+loadNextImage();
 
 // Reload button functionality
-document.getElementById('reload-image').addEventListener('click', loadRandomPresetImage);
+document.getElementById('reload-image').addEventListener('click', loadNextImage);
 
 // Log load success or failure
 img.onload = () => console.log("Image loaded successfully!");
