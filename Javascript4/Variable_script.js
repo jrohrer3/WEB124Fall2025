@@ -12,6 +12,16 @@ const presetImages = [
   'images/image10.jpg'
 ];
 
+// Image 1 Source Link: https://unsplash.com/photos/yellow-red-and-blue-brick-wall-hpXpLcub5Xg
+// Image 2 Source Link: https://unsplash.com/photos/yellow-banana-fruits-on-pink-surface-XxvC7az167s
+// Image 3 Source Link: https://unsplash.com/photos/IqY9v9kQWF0
+// Image 4 Source Link: https://unsplash.com/photos/pink-and-white-hearts-illustration-O8PjuNKatJ0
+// Image 5 Source Link: https://unsplash.com/photos/cooked-popcorn-ViI6qkoRfNA
+// Image 6 Source Link: https://unsplash.com/photos/assorted-color-wheel-lot-D2rJ0RlDZ58
+// Image 7 Source Link: https://unsplash.com/photos/blue-and-white-wall-V-77FxfGeQU
+// Image 8 Source Link: https://unsplash.com/photos/a-close-up-of-a-wall-with-a-pattern-on-it-YajdCee-H88
+// Image 9 Source Link: https://unsplash.com/photos/black-and-white-floor-tiles-X-3CqrZd6R0
+// Image 10 Source Link: https://unsplash.com/photos/multicolored-textiles-roof-CdR2290-KAo
 const img = document.getElementById('random-image');
 let currentIndex = 0;
 
