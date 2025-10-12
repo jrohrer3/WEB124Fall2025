@@ -11,9 +11,22 @@ function handleUpdate() {
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
 
 // Random Unsplash image
-const randomNumber = Math.floor(Math.random() * 1000);
 const img = document.getElementById('random-image');
-img.src = `https://source.unsplash.com/random/800x500?sig=${randomNumber}`;
+function loadRandomImage() {
+  const randomNumber = Math.floor(Math.random() * 1000);
+  img.src = `https://source.unsplash.com/random/800x500?sig=${randomNumber}`;
+}
+
+// Load the image
+loadRandomImage();
+
+// Ensure image is visible
+img.onload = () => {
+  console.log("Image loaded successfully!");
+};
+img.onerror = () => {
+  console.error("Failed to load Unsplash image.");
+};
 
 // Random background color
 function randomColor() {
@@ -29,7 +42,7 @@ const heading = document.querySelector('h2');
 const randomSize = Math.floor(Math.random() * 30) + 30; // 30–60px
 heading.style.fontSize = `${randomSize}px`;
 
-// Random quote/text
+// Random quote
 const quotes = [
   "Life is short, smile while you still have teeth.",
   "Do what you love, love what you do.",
@@ -41,7 +54,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 document.getElementById('random-text').textContent = randomQuote;
 
 // Random image rotation
-const rotation = Math.floor(Math.random() * 20) - 10; // small rotation -10 to +10 deg
+const rotation = Math.floor(Math.random() * 20) - 10; // -10 to +10 deg
 document.documentElement.style.setProperty('--rotation', `${rotation}deg`);
 
 // Random image shadow
