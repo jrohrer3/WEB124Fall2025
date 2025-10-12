@@ -1,11 +1,19 @@
 /* Joel Rohrer October 14 2025 */
+:root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px;
+  --rotation: 0deg;
+  --shadow: 5px 5px 20px rgba(0,0,0,0.5);
+}
+
 /* Image container prevents text from overlapping */
 .image-container {
   display: inline-block;
   overflow: hidden;
   margin: 20px auto;
   max-width: 90%;
-  min-height: 300px; /* ensures visible container */
+  min-height: 300px;
   border-radius: 10px;
 }
 
@@ -27,6 +35,41 @@ img {
 /* Fade-out class for transitions */
 img.fade-out {
   opacity: 0;
+}
+
+/* Highlighted text uses base color */
+.hl {
+  color: var(--base);
+}
+
+/* Body and general text */
+body {
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  font-size: 50px;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  background-color: black;
+}
+
+/* Control panel styling */
+.controls {
+  margin-bottom: 50px;
+}
+
+input[type="range"],
+input[type="color"] {
+  width: 100px;
+  margin: 0 10px;
+}
+
+/* Random text */
+#random-text {
+  font-size: 24px;
+  margin: 20px 0;
+  max-width: 90%;
 }
 
 /* Image 1 Source Link: https://unsplash.com/photos/yellow-red-and-blue-brick-wall-hpXpLcub5Xg */
