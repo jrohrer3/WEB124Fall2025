@@ -1,3 +1,4 @@
+// Joel Rohrer October 14 2025
 const presetImages = [
   'images/image1.jpg',
   'images/image2.jpg',
