@@ -14,13 +14,19 @@ inputs.forEach(input => input.addEventListener('input', handleUpdate));
 const img = document.getElementById('random-image');
 
 function loadRandomImage() {
-  // Unique identifier: random number + timestamp
+  // Unique identifier: timestamp + random number
   const uniqueId = Date.now() + '-' + Math.floor(Math.random() * 10000);
   img.src = `https://source.unsplash.com/random/800x500?sig=${uniqueId}`;
 }
 
 // Load the image initially
 loadRandomImage();
+
+// Reload button functionality
+const reloadButton = document.getElementById('reload-image');
+reloadButton.addEventListener('click', () => {
+  loadRandomImage();
+});
 
 // Ensure image is visible
 img.onload = () => {
