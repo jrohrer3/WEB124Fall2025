@@ -1,6 +1,5 @@
 /* Joel Rohrer October 14 2025 */
 
-/* CSS Variables (custom properties) */
 :root {
   --base: #ffc600;
   --spacing: 10px;
@@ -9,14 +8,26 @@
   --shadow: 5px 5px 20px rgba(0,0,0,0.5);
 }
 
+/* Image container prevents the text from overlapping */
+.image-container {
+  display: inline-block;
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 90%;
+  border-radius: 10px;
+}
+
 /* Image styling with variables */
 img {
+  width: 100%;
+  height: auto;
   padding: var(--spacing);
   background-color: var(--base);
   filter: blur(var(--blur));
   transform: rotate(var(--rotation));
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
+  display: block;
 }
 
 /* Highlighted text uses base color */
