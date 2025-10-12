@@ -10,31 +10,24 @@ function handleUpdate() {
 
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
 
-// Random Unsplash image with unique file name
+// Random Unsplash image
 const img = document.getElementById('random-image');
 
 function loadRandomImage() {
-  // Unique identifier: timestamp + random number
   const uniqueId = Date.now() + '-' + Math.floor(Math.random() * 10000);
   img.src = `https://source.unsplash.com/random/800x500?sig=${uniqueId}`;
+  img.alt = "Random Unsplash Image"; // fallback if image fails
 }
 
-// Load the image initially
+// Initial load
 loadRandomImage();
 
 // Reload button functionality
-const reloadButton = document.getElementById('reload-image');
-reloadButton.addEventListener('click', () => {
-  loadRandomImage();
-});
+document.getElementById('reload-image').addEventListener('click', loadRandomImage);
 
-// Ensure image is visible
-img.onload = () => {
-  console.log("Image loaded successfully!");
-};
-img.onerror = () => {
-  console.error("Failed to load Unsplash image.");
-};
+// Log load success or failure
+img.onload = () => console.log("Image loaded successfully!");
+img.onerror = () => console.error("Failed to load Unsplash image.");
 
 // Random background color
 function randomColor() {
@@ -47,8 +40,7 @@ document.body.style.backgroundColor = randomColor();
 
 // Random heading font size
 const heading = document.querySelector('h2');
-const randomSize = Math.floor(Math.random() * 30) + 30; // 30–60px
-heading.style.fontSize = `${randomSize}px`;
+heading.style.fontSize = `${Math.floor(Math.random() * 30 + 30)}px`; // 30–60px
 
 // Random quote
 const quotes = [
@@ -58,13 +50,11 @@ const quotes = [
   "Every day is a second chance.",
   "Happiness is homemade."
 ];
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-document.getElementById('random-text').textContent = randomQuote;
+document.getElementById('random-text').textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
 // Random image rotation
-const rotation = Math.floor(Math.random() * 20) - 10; // -10 to +10 deg
-document.documentElement.style.setProperty('--rotation', `${rotation}deg`);
+document.documentElement.style.setProperty('--rotation', `${Math.floor(Math.random() * 20 - 10)}deg`);
 
 // Random image shadow
-const shadowSize = Math.floor(Math.random() * 20) + 5;
+const shadowSize = Math.floor(Math.random() * 20 + 5);
 document.documentElement.style.setProperty('--shadow', `${shadowSize}px ${shadowSize}px 30px rgba(0,0,0,0.6)`);
