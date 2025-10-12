@@ -1,3 +1,4 @@
+// Joel Rohrer October 14 2025
 const presetImages = [
   'images/image1.jpg',
   'images/image2.jpg',
@@ -41,4 +42,27 @@ document.getElementById('reload-image').addEventListener('click', loadNextImage)
 
 // Optional: log success/failure
 img.onload = () => console.log("Image loaded successfully!");
-img.onerror = () => co
+img.onerror = () => console.error("Failed to load image.");
+
+// Random background color
+document.body.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+
+// Random font size
+document.querySelector('h2').style.fontSize = `${Math.floor(Math.random()*30 + 30)}px`;
+
+// Random quotes
+const quotes = [
+  "Life is short, smile while you still have teeth.",
+  "Do what you love, love what you do.",
+  "Be fearless in the pursuit of what sets your soul on fire.",
+  "Every day is a second chance.",
+  "Happiness is homemade."
+];
+document.getElementById('random-text').textContent = quotes[Math.floor(Math.random()*quotes.length)];
+
+// Random image rotation
+document.documentElement.style.setProperty('--rotation', `${Math.floor(Math.random() * 20 - 10)}deg`);
+
+// Random image shadow
+const shadowSize = Math.floor(Math.random() * 20 + 5);
+document.documentElement.style.setProperty('--shadow', `${shadowSize}px ${shadowSize}px 30px rgba(0,0,0,0.6)`);
