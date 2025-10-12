@@ -1,5 +1,4 @@
 /* Joel Rohrer October 14 2025 */
-
 :root {
   --base: #ffc600;
   --spacing: 10px;
@@ -8,12 +7,13 @@
   --shadow: 5px 5px 20px rgba(0,0,0,0.5);
 }
 
-/* Image container prevents the text from overlapping */
+/* Image container prevents text from overlapping */
 .image-container {
   display: inline-block;
   overflow: hidden;
   margin: 20px auto;
   max-width: 90%;
+  min-height: 300px; /* ensures visible container */
   border-radius: 10px;
 }
 
@@ -28,6 +28,7 @@ img {
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
   display: block;
+  border-radius: 10px;
 }
 
 /* Highlighted text uses base color */
@@ -44,6 +45,7 @@ body {
   color: white;
   margin: 0;
   padding: 20px;
+  background-color: black; /* fallback background */
 }
 
 /* Control panel styling */
@@ -54,10 +56,12 @@ body {
 input[type="range"],
 input[type="color"] {
   width: 100px;
+  margin: 0 10px;
 }
 
 /* Random text */
 #random-text {
   font-size: 24px;
   margin: 20px 0;
+  max-width: 90%;
 }
