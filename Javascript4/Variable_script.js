@@ -41,7 +41,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 document.getElementById('random-text').textContent = randomQuote;
 
 // Random image rotation
-const rotation = Math.floor(Math.random() * 360); // 0–359 degrees
+const rotation = Math.floor(Math.random() * 20) - 10; // small rotation -10 to +10 deg
 document.documentElement.style.setProperty('--rotation', `${rotation}deg`);
 
 // Random image shadow
