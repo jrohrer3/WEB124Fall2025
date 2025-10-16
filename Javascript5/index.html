@@ -4,21 +4,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Drag Gallery</title>
+  <title>Click & Drag Unsplash Gallery</title>
   <link rel="stylesheet" href="Click_style.css" />
   <link rel="icon" href="https://fav.farm/✅" />
 </head>
 <body>
   <main class="container">
-    <header>
-      <h1>Click & Drag Gallery</h1>
-      <p class="hint">Click and drag (or swipe) horizontally to explore the images!</p>
-      <div class="color-controls">
-        <label for="bgColor">Background Color:</label>
-        <input type="color" id="bgColor" value="#ffffff" />
-      </div>
-    </header>
+    <h1>Click & Drag Unsplash Gallery</h1>
+    <p class="hint">Drag horizontally (or swipe) to explore the gallery!</p>
 
+    <div class="controls">
+      <label for="bgColor">Choose Background Color:</label>
+      <input type="color" id="bgColor" value="#ffffff" />
+    </div>
+
+    <div class="items" id="gallery">
+      <!-- 25 preset Unsplash images -->
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80')"><span>01</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80')"><span>02</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80')"><span>03</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?auto=format&fit=crop&w=800&q=80')"><span>04</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80')"><span>05</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80')"><span>06</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80')"><span>07</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80')"><span>08</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80')"><span>09</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80')"><span>10</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80')"><span>11</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80')"><span>12</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?auto=format&fit=crop&w=800&q=80')"><span>13</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80')"><span>14</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80')"><span>15</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80')"><span>16</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80')"><span>17</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80')"><span>18</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80')"><span>19</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80')"><span>20</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?auto=format&fit=crop&w=800&q=80')"><span>21</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80')"><span>22</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80')"><span>23</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80')"><span>24</span></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80')"><span>25</span></div>
+    </div>
+  </main>
+
+  <script src="Click_script.js"></script>
+</body>
+</html>
     <div class="items"></div>
   </main>
 
