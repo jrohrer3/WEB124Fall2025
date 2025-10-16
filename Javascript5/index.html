@@ -4,45 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Click and Drag Gallery</title>
-  <link rel="stylesheet" href="Click_style.css" />
+  <title>Interactive Drag Gallery</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="https://fav.farm/✅" />
 </head>
 <body>
   <main class="container">
-    <h1>Click & Drag Gallery</h1>
-    <p class="hint">Click and drag (or swipe) horizontally to explore!</p>
+    <header>
+      <h1>Click & Drag Gallery</h1>
+      <p class="hint">Click and drag (or swipe) horizontally to explore the images!</p>
+      <div class="color-controls">
+        <label for="bgColor">Background Color:</label>
+        <input type="color" id="bgColor" value="#ffffff" />
+      </div>
+    </header>
 
-    <div class="items">
-      <!-- 25 panels -->
-      <div class="item">01</div>
-      <div class="item">02</div>
-      <div class="item">03</div>
-      <div class="item">04</div>
-      <div class="item">05</div>
-      <div class="item">06</div>
-      <div class="item">07</div>
-      <div class="item">08</div>
-      <div class="item">09</div>
-      <div class="item">10</div>
-      <div class="item">11</div>
-      <div class="item">12</div>
-      <div class="item">13</div>
-      <div class="item">14</div>
-      <div class="item">15</div>
-      <div class="item">16</div>
-      <div class="item">17</div>
-      <div class="item">18</div>
-      <div class="item">19</div>
-      <div class="item">20</div>
-      <div class="item">21</div>
-      <div class="item">22</div>
-      <div class="item">23</div>
-      <div class="item">24</div>
-      <div class="item">25</div>
-    </div>
+    <div class="items"></div>
   </main>
 
-  <script src="Click_script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
