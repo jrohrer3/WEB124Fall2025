@@ -38,3 +38,22 @@ slider.addEventListener('mousemove', (e) => {
 colorPicker.addEventListener('input', (e) => {
   document.body.style.backgroundColor = e.target.value;
 });
+
+// script.js — Randomly select 25 of 50 CSS background classes
+const gallery = document.querySelector('.gallery');
+const totalImages = 50;
+const imagesToShow = 25;
+
+// Create an array of 50 class names
+const allClasses = Array.from({ length: totalImages }, (_, i) => `bg${i + 1}`);
+
+// Shuffle the array and pick 25
+const shuffled = allClasses.sort(() => 0.5 - Math.random()).slice(0, imagesToShow);
+
+// Add items with random backgrounds
+shuffled.forEach(cls => {
+  const div = document.createElement('div');
+  div.classList.add('item', cls);
+  gallery.appendChild(div);
+});
+
