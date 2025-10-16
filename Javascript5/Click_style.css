@@ -1,7 +1,6 @@
 /* Joel Rohrer October 21 2025 */
 html {
   box-sizing: border-box;
-  background: url('https://source.unsplash.com/NFs6dRTBgaM/2000x2000') fixed center/cover;
   scroll-behavior: smooth;
 }
 
@@ -16,14 +15,17 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
   text-align: center;
-  backdrop-filter: blur(3px);
+  transition: background-color 0.4s ease;
 }
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1300px;
+}
+
+header {
+  margin-bottom: 2rem;
 }
 
 h1 {
@@ -36,69 +38,74 @@ h1 {
 .hint {
   font-size: 1rem;
   opacity: 0.8;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.color-controls {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#bgColor {
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: 2px solid rgba(0,0,0,0.1);
 }
 
 .items {
   height: 400px;
-  padding: 50px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   user-select: none;
   cursor: grab;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   will-change: transform;
   perspective: 600px;
+  backdrop-filter: blur(4px);
 }
 
 .items.active {
   cursor: grabbing;
-  background: rgba(255, 255, 255, 0.25);
   transform: scale(1.02);
 }
 
 .item {
-  width: 200px;
-  height: 300px;
+  width: 260px;
+  height: 320px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  font-weight: 100;
-  margin: 0 10px;
-  color: rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 0 8px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  color: white;
+  margin: 0 12px;
   border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
 }
-
-.item:nth-child(9n+1) { background: dodgerblue; }
-.item:nth-child(9n+2) { background: goldenrod; }
-.item:nth-child(9n+3) { background: paleturquoise; }
-.item:nth-child(9n+4) { background: gold; }
-.item:nth-child(9n+5) { background: cadetblue; }
-.item:nth-child(9n+6) { background: tomato; }
-.item:nth-child(9n+7) { background: lightcoral; }
-.item:nth-child(9n+8) { background: darkslateblue; }
-.item:nth-child(9n+9) { background: rebeccapurple; }
-
-.item:nth-child(even) { transform: scaleX(1.1) rotateY(25deg); }
-.item:nth-child(odd) { transform: scaleX(1.1) rotateY(-25deg); }
 
 @media (max-width: 700px) {
   .item {
-    width: 140px;
-    height: 200px;
-    font-size: 2rem;
+    width: 180px;
+    height: 220px;
   }
   h1 {
     font-size: 2rem;
