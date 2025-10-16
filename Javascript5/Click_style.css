@@ -15,17 +15,15 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
   text-align: center;
-  transition: background-color 0.4s ease;
+  background: #ffffff;
+  transition: background-color 0.3s ease;
 }
 
 .container {
   width: 90%;
-  max-width: 1300px;
-}
-
-header {
-  margin-bottom: 2rem;
+  max-width: 1200px;
 }
 
 h1 {
@@ -41,71 +39,79 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.color-controls {
+.controls {
   margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
 }
 
 #bgColor {
+  margin-left: 10px;
   cursor: pointer;
+  height: 35px;
+  width: 50px;
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  outline: 2px solid rgba(0,0,0,0.1);
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
 .items {
   height: 400px;
-  padding: 40px;
-  border: 2px solid rgba(0, 0, 0, 0.15);
+  padding: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   user-select: none;
   cursor: grab;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   will-change: transform;
   perspective: 600px;
-  backdrop-filter: blur(4px);
 }
 
 .items.active {
   cursor: grabbing;
+  background: rgba(255, 255, 255, 0.25);
   transform: scale(1.02);
 }
 
 .item {
-  width: 260px;
-  height: 320px;
+  width: 200px;
+  height: 300px;
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: white;
-  margin: 0 12px;
+  margin: 0 10px;
   border-radius: 15px;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.7);
 }
 
 .item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.item span {
+  background: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
 }
 
 @media (max-width: 700px) {
   .item {
-    width: 180px;
-    height: 220px;
+    width: 140px;
+    height: 200px;
+    font-size: 1rem;
   }
   h1 {
     font-size: 2rem;
