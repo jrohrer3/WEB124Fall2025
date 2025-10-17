@@ -19,13 +19,13 @@ body {
   height: 80vh;
   padding: 10px;
   border: 2px solid #fff;
-  cursor: grab;
+  cursor: grab;          
   scroll-behavior: smooth;
-  flex-wrap: nowrap; /* Prevent wrapping / extra slots */
+  flex-wrap: nowrap;
 }
 
-.gallery:active {
-  cursor: grabbing;
+.gallery.active {
+  cursor: grabbing;     
 }
 
 .panel {
