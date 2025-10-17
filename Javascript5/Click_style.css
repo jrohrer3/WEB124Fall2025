@@ -22,6 +22,7 @@ body {
   cursor: grab;          
   scroll-behavior: smooth;
   flex-wrap: nowrap;
+  user-select: none; /* prevent text selection while dragging */
 }
 
 .gallery.active {
