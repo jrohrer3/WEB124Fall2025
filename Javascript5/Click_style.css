@@ -19,18 +19,18 @@ body {
   height: 80vh;
   padding: 10px;
   border: 2px solid #fff;
-  cursor: grab;          
-  scroll-behavior: smooth;
+  border-radius: 10px;
+  cursor: grab;
   flex-wrap: nowrap;
-  user-select: none; /* prevent text selection while dragging */
+  user-select: none;
 }
 
 .gallery.active {
-  cursor: grabbing;     
+  cursor: grabbing;
 }
 
 .panel {
-  flex: 0 0 auto; /* Prevent stretching or extra slots */
+  flex: 0 0 auto;
   width: 200px;
   height: 100%;
   border-radius: 12px;
@@ -39,18 +39,18 @@ body {
   transition: transform 0.2s ease;
 }
 
+.panel:hover {
+  transform: scale(1.05);
+}
+
 .panel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  user-select: none;    /* prevent text selection */
-  pointer-events: none; /* allow mouse events to pass through to parent */
-  -webkit-user-drag: none; /* prevent hand drag ghost */
-}
-
-.panel:hover {
-  transform: scale(1.05);
+  user-select: none;
+  pointer-events: none; /* allows drag through image */
+  -webkit-user-drag: none; /* disables ghost drag image */
 }
 
 .panel::after {
