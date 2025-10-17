@@ -8,7 +8,7 @@ for (let i = 1; i <= totalPanels; i++) {
   panel.classList.add('panel');
 
   const img = document.createElement('img');
-  img.src = `images/image${i}.jpeg`; // Make sure you have images 1-25
+  img.src = `images/image${i}.jpg`; // Make sure you have images 1-25
   img.alt = `Image ${i}`;
 
   panel.appendChild(img);
