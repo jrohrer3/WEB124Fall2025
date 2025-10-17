@@ -1,85 +1,88 @@
-// Joel Rohrer October 21 2025
+const gallery = document.querySelector('.gallery');
+const totalPanels = 25;
 
-const gallery = document.getElementById('gallery');
-let items = Array.from(gallery.querySelectorAll('.item'));
+// Generate panels with random positions and sizes
+for (let i = 1; i <= totalPanels; i++) {
+  const panel = document.createElement('div');
+  panel.classList.add('panel');
+  
+  const size = Math.random() * 80 + 120; // 120px to 200px
+  panel.style.width = `${size}px`;
+  panel.style.height = `${size}px`;
 
-// Shuffle Images on Load
-items = items.sort(() => Math.random() - 0.5);
-items.forEach(item => gallery.appendChild(item));
+  const x = Math.random() * (gallery.clientWidth - size);
+  const y = Math.random() * (gallery.clientHeight - size);
+  panel.style.left = `${x}px`;
+  panel.style.top = `${y}px`;
 
-// Assign background images from data attributes
-items.forEach(item => {
-  const img = item.dataset.img;
-  item.style.backgroundImage = `url('${img}')`;
+  const img = document.createElement('img');
+  img.src = `images/image${i}.jpg`; // Change to your 25 images
+  img.alt = `Image ${i}`;
+  panel.appendChild(img);
 
-  // Random initial size variation
-  const scale = 0.8 + Math.random() * 0.4; // 0.8 to 1.2
-  item.style.transform = `scale(${scale})`;
+  gallery.appendChild(panel);
 
-  // Random hue rotation
-  const hue = Math.floor(Math.random() * 360);
-  item.style.filter = `hue-rotate(${hue}deg) saturate(1.2)`;
-});
+  // Make panel draggable
+  makeDraggable(panel);
+}
 
-// Click & Drag functionality
-let isDown = false;
-let startX;
-let scrollLeft;
+function makeDraggable(el) {
+  let isDragging = false;
+  let startX, startY, origX, origY;
+  let velocity = { x: 0, y: 0 };
+  let animationFrame;
 
-gallery.addEventListener('mousedown', (e) => {
-  isDown = true;
-  gallery.classList.add('active');
-  startX = e.pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
-});
-
-gallery.addEventListener('mouseleave', () => {
-  isDown = false;
-  gallery.classList.remove('active');
-});
-
-gallery.addEventListener('mouseup', () => {
-  isDown = false;
-  gallery.classList.remove('active');
-});
-
-gallery.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  gallery.scrollLeft = scrollLeft - walk;
-});
-
-// Touch support
-gallery.addEventListener('touchstart', (e) => {
-  isDown = true;
-  gallery.classList.add('active');
-  startX = e.touches[0].pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
-});
-
-gallery.addEventListener('touchend', () => {
-  isDown = false;
-  gallery.classList.remove('active');
-});
-
-gallery.addEventListener('touchmove', (e) => {
-  if (!isDown) return;
-  const x = e.touches[0].pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  gallery.scrollLeft = scrollLeft - walk;
-});
-
-// Click to expand image
-items.forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('expanded');
+  el.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    el.classList.add('active');
+    startX = e.clientX;
+    startY = e.clientY;
+    origX = parseFloat(el.style.left);
+    origY = parseFloat(el.style.top);
+    cancelAnimationFrame(animationFrame);
   });
-});
 
-// Background color picker
-const bgPicker = document.getElementById('bgColorPicker');
-bgPicker.addEventListener('input', (e) => {
-  gallery.style.backgroundColor = e.target.value;
-});
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    el.style.left = `${origX + dx}px`;
+    el.style.top = `${origY + dy}px`;
+
+    // Update velocity for momentum
+    velocity.x = dx;
+    velocity.y = dy;
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    el.classList.remove('active');
+    applyMomentum(el, velocity);
+  });
+}
+
+function applyMomentum(el, velocity) {
+  let vx = velocity.x * 0.2;
+  let vy = velocity.y * 0.2;
+
+  function move() {
+    vx *= 0.95; // friction
+    vy *= 0.95;
+    let left = parseFloat(el.style.left) + vx;
+    let top = parseFloat(el.style.top) + vy;
+
+    // Boundary check
+    left = Math.min(Math.max(0, left), gallery.clientWidth - el.clientWidth);
+    top = Math.min(Math.max(0, top), gallery.clientHeight - el.clientHeight);
+
+    el.style.left = `${left}px`;
+    el.style.top = `${top}px`;
+
+    if (Math.abs(vx) > 0.1 || Math.abs(vy) > 0.1) {
+      animationFrame = requestAnimationFrame(move);
+    }
+  }
+
+  move();
+}
