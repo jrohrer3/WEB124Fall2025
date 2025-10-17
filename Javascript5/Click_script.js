@@ -1,14 +1,28 @@
 // Joel Rohrer October 21 2025
 const gallery = document.getElementById('gallery');
-const totalImages = 25; // number of images in the folder
-const imagePath = 'images/'; // folder path
-const imageExtension = '.jpeg'; // extension of images
+const totalImages = 25;
+const folder = 'images/';
+const extensions = ['.jpeg', '.jpg']; // try these extensions in order
 
 // Dynamically create items
 for (let i = 1; i <= totalImages; i++) {
   const div = document.createElement('div');
   div.classList.add('item');
-  div.style.backgroundImage = `url('${imagePath}image${i}${imageExtension}')`;
+
+  // Try each extension until image loads
+  let loaded = false;
+  extensions.forEach(ext => {
+    const imgPath = `${folder}image${i}${ext}`;
+    const img = new Image();
+    img.src = imgPath;
+    img.onload = () => {
+      if (!loaded) {
+        div.style.backgroundImage = `url('${imgPath}')`;
+        loaded = true;
+      }
+    };
+  });
+
   gallery.appendChild(div);
 }
 
