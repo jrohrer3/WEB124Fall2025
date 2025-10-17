@@ -21,6 +21,7 @@ body {
   border: 2px solid #fff;
   cursor: grab;
   scroll-behavior: smooth;
+  flex-wrap: nowrap; /* Prevent wrapping / extra slots */
 }
 
 .gallery:active {
@@ -28,7 +29,7 @@ body {
 }
 
 .panel {
-  flex: 0 0 auto; /* Prevent shrinking */
+  flex: 0 0 auto; /* Prevent stretching or extra slots */
   width: 200px;
   height: 100%;
   border-radius: 12px;
