@@ -62,6 +62,7 @@ body {
   flex: 0 0 auto;
   width: 300px;
   height: 100%;
+  min-height: 300px; /* ensures visibility */
   margin-right: 10px;
   border-radius: 16px;
   background-size: cover;
@@ -75,7 +76,7 @@ body {
   transform: scale(1.05);
 }
 
-/* 25 local images */
+/* 25 images */
 .item1  { background-image: url('images/image1.jpeg'); }
 .item2  { background-image: url('images/image2.jpeg'); }
 .item3  { background-image: url('images/image3.jpeg'); }
