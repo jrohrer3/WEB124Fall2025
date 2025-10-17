@@ -1,31 +1,31 @@
 // Joel Rohrer October 21 2025
 const gallery = document.querySelector('.gallery');
 
-let isDown = false;
+let isDragging = false;
 let startX;
-let scrollLeft;
+let scrollStart;
 
 gallery.addEventListener('mousedown', (e) => {
-  isDown = true;
+  isDragging = true;
   gallery.classList.add('active');
   startX = e.pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
+  scrollStart = gallery.scrollLeft;
 });
 
 gallery.addEventListener('mouseleave', () => {
-  isDown = false;
+  isDragging = false;
   gallery.classList.remove('active');
 });
 
 gallery.addEventListener('mouseup', () => {
-  isDown = false;
+  isDragging = false;
   gallery.classList.remove('active');
 });
 
 gallery.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
+  if (!isDragging) return;
+  e.preventDefault(); // prevent text selection
   const x = e.pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 2; // scroll speed
-  gallery.scrollLeft = scrollLeft - walk;
+  const walk = (x - startX) * 2; // scroll speed multiplier
+  gallery.scrollLeft = scrollStart - walk;
 });
