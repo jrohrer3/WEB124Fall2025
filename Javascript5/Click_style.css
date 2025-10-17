@@ -75,29 +75,29 @@ body {
   transform: scale(1.05);
 }
 
-/* 25 preset Unsplash image links (when pasting into the search bar, remove the period at the end).
-Image 1: https://unsplash.com/photos/man-with-laptop-and-woman-playing-cello-8FVE3lrch8Y.
-Image 2: https://unsplash.com/photos/milky-way-galaxy-over-a-forest-at-night-hegb9Y8dKos.
-Image 3: https://unsplash.com/photos/autumn-trees-line-a-winding-country-road-from-above-Tl_P1oW69HE.
-Image 4: https://unsplash.com/photos/city-skyline-viewed-through-a-dark-window-frame--rwwnDqsTQc.
-Image 5: https://unsplash.com/photos/tree-growing-on-a-rock-in-the-ocean-waves-wEMXOQwjG58.
-Image 6: https://unsplash.com/photos/row-of-colorful-beach-huts-along-a-path-hWRvdENS4wc.
-Image 7: https://unsplash.com/photos/a-small-bird-with-a-red-cap-in-the-snow-jsoixPUBV-8.
-Image 8: https://unsplash.com/photos/silhouette-of-angkor-wat-temple-at-sunrise-Q6XTPsfAq4c.
-Image 9: https://unsplash.com/photos/courtyard-with-pool-and-palm-trees-in-desert-architecture-VBi7cdnaMBk.
-Image 10: https://unsplash.com/photos/man-stands-on-rocky-shore-under-starry-night-sky--yHqAeo9anE.
-Image 11: https://unsplash.com/photos/silhouettes-of-people-on-a-beach-at-sunset-jWBQiZSQKkY.
-Image 12: https://unsplash.com/photos/yellow-vintage-volkswagen-bus-parked-outside-house-KB2xVKrQiPI.
-Image 13: https://unsplash.com/photos/tall-redwood-trees-in-a-misty-forest-leeHbTl9qqI.
-Image 14: https://unsplash.com/photos/a-carved-pumpkin-glows-in-a-mossy-forest-setting-hPnP1HnNcWA.
-Image 15: https://unsplash.com/photos/aerial-view-of-a-volcanic-crater-with-colorful-mineral-deposits-kyCmHQH3-Zc.
-Image 16: https://unsplash.com/photos/two-boys-watch-fish-and-duck-in-water-UWX_aanPqp8.
-Image 17: https://unsplash.com/photos/glass-dome-ceiling-with-intricate-metal-framework-qiZuwX6xvCs.
-Image 18: https://unsplash.com/photos/autumn-leaves-and-berries-with-abstract-overlay-9WlzNDn9VbA.
-Image 19: https://unsplash.com/photos/rocky-coastline-with-natural-arches-and-calm-sea-GsSUlbzXIec.
-Image 20: https://unsplash.com/photos/a-snow-leopard-rests-on-a-wooden-platform-xCcMVe4KXvY.
-Image 21: https://unsplash.com/photos/turquoise-river-delta-from-above-XCa7IBCqno4.
-Image 22: https://unsplash.com/photos/octagonal-ceiling-with-radiating-beams-and-windows-IHG9jyKiUac.
-Image 23: https://unsplash.com/photos/abstract-pattern-of-blue-and-white-textures-oeMBcVDmCY8.
-Image 24: https://unsplash.com/photos/amanita-muscaria-mushroom-in-a-forest-setting-_fo94DN8yXo.
-Image 25: https://unsplash.com/photos/sun-setting-behind-a-silhouetted-mountain-peak-2p4MJoBhP1A. */
+/* 25 preset Unsplash image links
+https://unsplash.com/photos/man-with-laptop-and-woman-playing-cello-8FVE3lrch8Y
+https://unsplash.com/photos/milky-way-galaxy-over-a-forest-at-night-hegb9Y8dKos
+https://unsplash.com/photos/autumn-trees-line-a-winding-country-road-from-above-Tl_P1oW69HE
+https://unsplash.com/photos/city-skyline-viewed-through-a-dark-window-frame--rwwnDqsTQc
+https://unsplash.com/photos/tree-growing-on-a-rock-in-the-ocean-waves-wEMXOQwjG58
+https://unsplash.com/photos/row-of-colorful-beach-huts-along-a-path-hWRvdENS4wc
+https://unsplash.com/photos/a-small-bird-with-a-red-cap-in-the-snow-jsoixPUBV-8
+https://unsplash.com/photos/silhouette-of-angkor-wat-temple-at-sunrise-Q6XTPsfAq4c
+https://unsplash.com/photos/courtyard-with-pool-and-palm-trees-in-desert-architecture-VBi7cdnaMBk
+https://unsplash.com/photos/man-stands-on-rocky-shore-under-starry-night-sky--yHqAeo9anE
+https://unsplash.com/photos/silhouettes-of-people-on-a-beach-at-sunset-jWBQiZSQKkY
+https://unsplash.com/photos/yellow-vintage-volkswagen-bus-parked-outside-house-KB2xVKrQiPI
+https://unsplash.com/photos/tall-redwood-trees-in-a-misty-forest-leeHbTl9qqI
+https://unsplash.com/photos/a-carved-pumpkin-glows-in-a-mossy-forest-setting-hPnP1HnNcWA
+https://unsplash.com/photos/aerial-view-of-a-volcanic-crater-with-colorful-mineral-deposits-kyCmHQH3-Zc
+https://unsplash.com/photos/two-boys-watch-fish-and-duck-in-water-UWX_aanPqp8
+https://unsplash.com/photos/glass-dome-ceiling-with-intricate-metal-framework-qiZuwX6xvCs
+https://unsplash.com/photos/autumn-leaves-and-berries-with-abstract-overlay-9WlzNDn9VbA
+https://unsplash.com/photos/rocky-coastline-with-natural-arches-and-calm-sea-GsSUlbzXIec
+https://unsplash.com/photos/a-snow-leopard-rests-on-a-wooden-platform-xCcMVe4KXvY
+https://unsplash.com/photos/turquoise-river-delta-from-above-XCa7IBCqno4
+https://unsplash.com/photos/octagonal-ceiling-with-radiating-beams-and-windows-IHG9jyKiUac
+https://unsplash.com/photos/abstract-pattern-of-blue-and-white-textures-oeMBcVDmCY8
+https://unsplash.com/photos/amanita-muscaria-mushroom-in-a-forest-setting-_fo94DN8yXo
+https://unsplash.com/photos/sun-setting-behind-a-silhouetted-mountain-peak-2p4MJoBhP1A */
