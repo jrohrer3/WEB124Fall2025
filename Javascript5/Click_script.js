@@ -4,6 +4,7 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
+// Click & Drag Scrolling
 slider.addEventListener('mousedown', (e) => {
   isDown = true;
   slider.classList.add('active');
@@ -25,11 +26,11 @@ slider.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 1.5; // drag speed
+  const walk = (x - startX) * 1.5;
   slider.scrollLeft = scrollLeft - walk;
 });
 
-// ✅ Touch support for mobile
+// Touch support
 slider.addEventListener('touchstart', (e) => {
   isDown = true;
   slider.classList.add('active');
@@ -47,4 +48,10 @@ slider.addEventListener('touchmove', (e) => {
   const x = e.touches[0].pageX - slider.offsetLeft;
   const walk = (x - startX) * 1.5;
   slider.scrollLeft = scrollLeft - walk;
+});
+
+// Background color picker
+const bgPicker = document.getElementById('bgColorPicker');
+bgPicker.addEventListener('input', (e) => {
+  slider.style.backgroundColor = e.target.value;
 });
