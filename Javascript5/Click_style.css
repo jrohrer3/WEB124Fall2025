@@ -76,33 +76,6 @@ body {
   transform: scale(1.05);
 }
 
-/* 25 images */
-.item1  { background-image: url('images/image1.jpeg'); }
-.item2  { background-image: url('images/image2.jpeg'); }
-.item3  { background-image: url('images/image3.jpeg'); }
-.item4  { background-image: url('images/image4.jpeg'); }
-.item5  { background-image: url('images/image5.jpeg'); }
-.item6  { background-image: url('images/image6.jpeg'); }
-.item7  { background-image: url('images/image7.jpeg'); }
-.item8  { background-image: url('images/image8.jpeg'); }
-.item9  { background-image: url('images/image9.jpeg'); }
-.item10 { background-image: url('images/image10.jpeg'); }
-.item11 { background-image: url('images/image11.jpeg'); }
-.item12 { background-image: url('images/image12.jpeg'); }
-.item13 { background-image: url('images/image13.jpeg'); }
-.item14 { background-image: url('images/image14.jpeg'); }
-.item15 { background-image: url('images/image15.jpeg'); }
-.item16 { background-image: url('images/image16.jpeg'); }
-.item17 { background-image: url('images/image17.jpeg'); }
-.item18 { background-image: url('images/image18.jpeg'); }
-.item19 { background-image: url('images/image19.jpeg'); }
-.item20 { background-image: url('images/image20.jpeg'); }
-.item21 { background-image: url('images/image21.jpeg'); }
-.item22 { background-image: url('images/image22.jpeg'); }
-.item23 { background-image: url('images/image23.jpeg'); }
-.item24 { background-image: url('images/image24.jpeg'); }
-.item25 { background-image: url('images/image25.jpeg'); }
-
 /* 25 preset Unsplash image source links
 https://unsplash.com/photos/tree-growing-on-a-rock-in-the-ocean-waves-wEMXOQwjG58
 https://unsplash.com/photos/milky-way-galaxy-over-a-forest-at-night-hegb9Y8dKos
