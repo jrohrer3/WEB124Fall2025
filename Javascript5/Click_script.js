@@ -1,22 +1,14 @@
+// Joel Rohrer October 21 2025
 const gallery = document.querySelector('.gallery');
 const totalPanels = 25;
 
-// Generate panels with random positions and sizes
+// Generate 25 panels in grid order
 for (let i = 1; i <= totalPanels; i++) {
   const panel = document.createElement('div');
   panel.classList.add('panel');
-  
-  const size = Math.random() * 80 + 120; // 120px to 200px
-  panel.style.width = `${size}px`;
-  panel.style.height = `${size}px`;
-
-  const x = Math.random() * (gallery.clientWidth - size);
-  const y = Math.random() * (gallery.clientHeight - size);
-  panel.style.left = `${x}px`;
-  panel.style.top = `${y}px`;
 
   const img = document.createElement('img');
-  img.src = `images/image${i}.jpg`; // Change to your 25 images
+  img.src = `images/image${i}.jpg`; // Make sure you have images 1-25
   img.alt = `Image ${i}`;
   panel.appendChild(img);
 
@@ -37,8 +29,10 @@ function makeDraggable(el) {
     el.classList.add('active');
     startX = e.clientX;
     startY = e.clientY;
-    origX = parseFloat(el.style.left);
-    origY = parseFloat(el.style.top);
+    origX = el.offsetLeft;
+    origY = el.offsetTop;
+    el.style.position = 'absolute';
+    el.style.zIndex = 1000; // Bring to front
     cancelAnimationFrame(animationFrame);
   });
 
