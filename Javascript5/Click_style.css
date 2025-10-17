@@ -44,6 +44,9 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  user-select: none;    /* prevent text selection */
+  pointer-events: none; /* allow mouse events to pass through to parent */
+  -webkit-user-drag: none; /* prevent hand drag ghost */
 }
 
 .panel:hover {
