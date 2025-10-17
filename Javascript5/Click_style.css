@@ -75,29 +75,29 @@ body {
   transform: scale(1.05);
 }
 
-/* 25 preset Unsplash images */
-.item1  { background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'); }
-.item2  { background-image: url('https://images.unsplash.com/photo-1517817748499-49ec54a324ea?auto=format&fit=crop&w=800&q=80'); }
-.item3  { background-image: url('https://images.unsplash.com/photo-1516685304081-de7947d419d4?auto=format&fit=crop&w=800&q=80'); }
-.item4  { background-image: url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80'); }
-.item5  { background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80'); }
-.item6  { background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80'); }
-.item7  { background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80'); }
-.item8  { background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=800&q=80'); }
-.item9  { background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80'); }
-.item10 { background-image: url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80'); }
-.item11 { background-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80'); }
-.item12 { background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80'); }
-.item13 { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3fb?auto=format&fit=crop&w=800&q=80'); }
-.item14 { background-image: url('https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?auto=format&w=800&q=80'); }
-.item15 { background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'); }
-.item16 { background-image: url('https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&w=800&q=80'); }
-.item17 { background-image: url('https://images.unsplash.com/photo-1511311110562-917e75c86e47?auto=format&w=800&q=80'); }
-.item18 { background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&w=800&q=80'); }
-.item19 { background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&w=800&q=80'); }
-.item20 { background-image: url('https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&w=800&q=80'); }
-.item21 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&w=800&q=80'); }
-.item22 { background-image: url('https://images.unsplash.com/photo-1508264165352-258859e62245?auto=format&w=800&q=80'); }
-.item23 { background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&w=800&q=80'); }
-.item24 { background-image: url('https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&w=800&q=80'); }
-.item25 { background-image: url('https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&w=800&q=80'); }
+/* 25 preset Unsplash image links (when pasting into the search bar, remove the period at the end).
+Image 1: https://unsplash.com/photos/man-with-laptop-and-woman-playing-cello-8FVE3lrch8Y.
+Image 2: https://unsplash.com/photos/milky-way-galaxy-over-a-forest-at-night-hegb9Y8dKos.
+Image 3: https://unsplash.com/photos/autumn-trees-line-a-winding-country-road-from-above-Tl_P1oW69HE.
+Image 4: https://unsplash.com/photos/city-skyline-viewed-through-a-dark-window-frame--rwwnDqsTQc.
+Image 5: https://unsplash.com/photos/tree-growing-on-a-rock-in-the-ocean-waves-wEMXOQwjG58.
+Image 6: https://unsplash.com/photos/row-of-colorful-beach-huts-along-a-path-hWRvdENS4wc.
+Image 7: https://unsplash.com/photos/a-small-bird-with-a-red-cap-in-the-snow-jsoixPUBV-8.
+Image 8: https://unsplash.com/photos/silhouette-of-angkor-wat-temple-at-sunrise-Q6XTPsfAq4c.
+Image 9: https://unsplash.com/photos/courtyard-with-pool-and-palm-trees-in-desert-architecture-VBi7cdnaMBk.
+Image 10: https://unsplash.com/photos/man-stands-on-rocky-shore-under-starry-night-sky--yHqAeo9anE.
+Image 11: https://unsplash.com/photos/silhouettes-of-people-on-a-beach-at-sunset-jWBQiZSQKkY.
+Image 12: https://unsplash.com/photos/yellow-vintage-volkswagen-bus-parked-outside-house-KB2xVKrQiPI.
+Image 13: https://unsplash.com/photos/tall-redwood-trees-in-a-misty-forest-leeHbTl9qqI.
+Image 14: https://unsplash.com/photos/a-carved-pumpkin-glows-in-a-mossy-forest-setting-hPnP1HnNcWA.
+Image 15: https://unsplash.com/photos/aerial-view-of-a-volcanic-crater-with-colorful-mineral-deposits-kyCmHQH3-Zc.
+Image 16: https://unsplash.com/photos/two-boys-watch-fish-and-duck-in-water-UWX_aanPqp8.
+Image 17: https://unsplash.com/photos/glass-dome-ceiling-with-intricate-metal-framework-qiZuwX6xvCs.
+Image 18: https://unsplash.com/photos/autumn-leaves-and-berries-with-abstract-overlay-9WlzNDn9VbA.
+Image 19: https://unsplash.com/photos/rocky-coastline-with-natural-arches-and-calm-sea-GsSUlbzXIec.
+Image 20: https://unsplash.com/photos/a-snow-leopard-rests-on-a-wooden-platform-xCcMVe4KXvY.
+Image 21: https://unsplash.com/photos/turquoise-river-delta-from-above-XCa7IBCqno4.
+Image 22: https://unsplash.com/photos/octagonal-ceiling-with-radiating-beams-and-windows-IHG9jyKiUac.
+Image 23: https://unsplash.com/photos/abstract-pattern-of-blue-and-white-textures-oeMBcVDmCY8.
+Image 24: https://unsplash.com/photos/amanita-muscaria-mushroom-in-a-forest-setting-_fo94DN8yXo.
+Image 25: https://unsplash.com/photos/sun-setting-behind-a-silhouetted-mountain-peak-2p4MJoBhP1A. */
