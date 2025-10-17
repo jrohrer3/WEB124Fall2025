@@ -14,7 +14,7 @@ gallery.addEventListener('mousedown', (e) => {
   startX = e.pageX - gallery.offsetLeft;
   scrollStart = gallery.scrollLeft;
   lastX = e.pageX;
-  cancelAnimationFrame(momentumFrame); // stop momentum if dragging again
+  cancelAnimationFrame(momentumFrame);
 });
 
 gallery.addEventListener('mouseleave', stopDragging);
@@ -22,13 +22,12 @@ gallery.addEventListener('mouseup', stopDragging);
 
 gallery.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
-  e.preventDefault();
+  e.preventDefault(); // prevent text selection / dragging images
 
   const x = e.pageX - gallery.offsetLeft;
   const walk = (x - startX) * 2; // scroll speed
   gallery.scrollLeft = scrollStart - walk;
 
-  // Calculate velocity for momentum
   velocity = e.pageX - lastX;
   lastX = e.pageX;
 });
