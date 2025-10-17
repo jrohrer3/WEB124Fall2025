@@ -1,114 +1,51 @@
 /* Joel Rohrer October 21 2025 */
-html {
-  box-sizing: border-box;
-  background: #111;
-  font-family: system-ui, sans-serif;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
   margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
   background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
-.controls {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  background: rgba(0,0,0,0.6);
-  padding: 10px 20px;
-  border-radius: 12px;
-  color: #fff;
-  font-size: 16px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.items {
-  display: flex;
-  align-items: center;
+.gallery {
+  position: relative;
+  width: 90vw;
   height: 80vh;
-  margin-top: 60px;
-  padding: 20px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  user-select: none;
-  cursor: grab;
-  scroll-behavior: smooth;
+  border: 2px solid #fff;
+  overflow: hidden;
+}
+
+.panel {
+  position: absolute;
   border-radius: 12px;
-  width: 95%;
-  max-width: 1800px;
-  background: #1a1a1a;
-  transition: background 0.3s ease;
+  overflow: hidden;
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.items.active {
-  cursor: grabbing;
-}
-
-.item {
-  flex: 0 0 auto;
-  width: 300px;
+.panel img {
+  display: block;
+  width: 100%;
   height: 100%;
-  min-height: 300px;
-  margin-right: 10px;
-  border-radius: 16px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #222; /* fallback */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: cover;
 }
 
-/* Hover Effects */
-.item:hover {
-  transform: scale(1.05) rotateZ(3deg);
-  box-shadow: 0 12px 30px rgba(255,255,255,0.2);
+.panel:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
-/* Expanded on Click */
-.item.expanded {
-  flex: 0 0 600px;
-  height: 80%;
-  z-index: 20;
+.panel::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
 }
 
-/* 25 preset Unsplash image source links
-https://unsplash.com/photos/tree-growing-on-a-rock-in-the-ocean-waves-wEMXOQwjG58
-https://unsplash.com/photos/milky-way-galaxy-over-a-forest-at-night-hegb9Y8dKos
-https://unsplash.com/photos/autumn-trees-line-a-winding-country-road-from-above-Tl_P1oW69HE
-https://unsplash.com/photos/city-skyline-viewed-through-a-dark-window-frame--rwwnDqsTQc
-https://unsplash.com/photos/mountain-range-with-pine-forest-and-river-Z5HradoBXzE
-https://unsplash.com/photos/row-of-colorful-beach-huts-along-a-path-hWRvdENS4wc
-https://unsplash.com/photos/a-small-bird-with-a-red-cap-in-the-snow-jsoixPUBV-8
-https://unsplash.com/photos/silhouette-of-angkor-wat-temple-at-sunrise-Q6XTPsfAq4c
-https://unsplash.com/photos/courtyard-with-pool-and-palm-trees-in-desert-architecture-VBi7cdnaMBk
-https://unsplash.com/photos/man-stands-on-rocky-shore-under-starry-night-sky--yHqAeo9anE
-https://unsplash.com/photos/silhouettes-of-people-on-a-beach-at-sunset-jWBQiZSQKkY
-https://unsplash.com/photos/yellow-vintage-volkswagen-bus-parked-outside-house-KB2xVKrQiPI
-https://unsplash.com/photos/tall-redwood-trees-in-a-misty-forest-leeHbTl9qqI
-https://unsplash.com/photos/a-carved-pumpkin-glows-in-a-mossy-forest-setting-hPnP1HnNcWA
-https://unsplash.com/photos/aerial-view-of-a-volcanic-crater-with-colorful-mineral-deposits-kyCmHQH3-Zc
-https://unsplash.com/photos/two-boys-watch-fish-and-duck-in-water-UWX_aanPqp8
-https://unsplash.com/photos/glass-dome-ceiling-with-intricate-metal-framework-qiZuwX6xvCs
-https://unsplash.com/photos/autumn-leaves-and-berries-with-abstract-overlay-9WlzNDn9VbA
-https://unsplash.com/photos/rocky-coastline-with-natural-arches-and-calm-sea-GsSUlbzXIec
-https://unsplash.com/photos/a-snow-leopard-rests-on-a-wooden-platform-xCcMVe4KXvY
-https://unsplash.com/photos/turquoise-river-delta-from-above-XCa7IBCqno4
-https://unsplash.com/photos/octagonal-ceiling-with-radiating-beams-and-windows-IHG9jyKiUac
-https://unsplash.com/photos/abstract-pattern-of-blue-and-white-textures-oeMBcVDmCY8
-https://unsplash.com/photos/amanita-muscaria-mushroom-in-a-forest-setting-_fo94DN8yXo
-https://unsplash.com/photos/sun-setting-behind-a-silhouetted-mountain-peak-2p4MJoBhP1A */
+.panel.active::after {
+  background: rgba(255, 0, 100, 0.3);
+}
