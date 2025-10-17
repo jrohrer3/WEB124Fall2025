@@ -6,20 +6,23 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
   font-family: sans-serif;
 }
 
 .gallery {
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-rows: repeat(5, 1fr);    /* 5 rows */
+  gap: 10px;
   width: 90vw;
+  max-width: 1000px;
   height: 80vh;
   border: 2px solid #fff;
-  overflow: hidden;
+  padding: 10px;
 }
 
 .panel {
-  position: absolute;
+  position: relative; /* For overlay */
   border-radius: 12px;
   overflow: hidden;
   cursor: grab;
