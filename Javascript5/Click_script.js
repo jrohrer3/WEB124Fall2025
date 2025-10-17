@@ -1,4 +1,24 @@
 // Joel Rohrer October 21 2025
+// Wait until DOM is ready
+window.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.gallery');
+  if (!gallery) {
+    console.error("Gallery container not found!");
+    return;
+  }
+
+  const totalImages = 50;
+  const imagesToShow = 25;
+  const allClasses = Array.from({ length: totalImages }, (_, i) => `bg${i + 1}`);
+  const shuffled = allClasses.sort(() => 0.5 - Math.random()).slice(0, imagesToShow);
+
+  shuffled.forEach(cls => {
+    const div = document.createElement('div');
+    div.classList.add('item', cls);
+    gallery.appendChild(div);
+  });
+});
+
 const slider = document.querySelector('.items');
 const colorPicker = document.getElementById('bgColor');
 
