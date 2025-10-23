@@ -1,1 +1,40 @@
 /* Joel Rohrer October 28 2025 */
+/* General body styles */
+body {
+  font-family: Arial, sans-serif; /* Set readable font */
+  max-width: 600px; /* Limit max width for readability */
+  margin: 0 auto; /* Center the content */
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Input and button styling */
+input, button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Paragraph styling for results */
+p {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+/* Media query for tablet */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  input, button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
