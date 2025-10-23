@@ -5,22 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript Calculator</title>
-  <!--Link to external CSS-->
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="calc_style.css">
 </head>
 <body>
   <h1>JavaScript Calculator</h1>
-  <!--Input field for user to enter a number-->
+  
+  <!-- Input field for user to enter a number -->
   <label for="num">Enter your desired number!</label>
   <input type="number" id="num">
-  <!--Button to trigger calculations-->
+
+  <!-- Button to trigger calculations -->
   <button id="calculateBtn">Calculate!</button>
-  <!--Paragraphs to display results-->
-  <p id="addition">Addition</p>
-  <p id="subtraction">Subtraction</p>
-  <p id="multiplication">Multiplication</p>
-  <p id="division">Division</p>
-  <!--Link to external JavaScript-->
+
+  <!-- Results container with 4 columns -->
+  <div class="results-container">
+    <p id="addition">Addition</p>
+    <p id="subtraction">Subtraction</p>
+    <p id="multiplication">Multiplication</p>
+    <p id="division">Division</p>
+  </div>
+
+  <!-- Link to external JavaScript -->  
   <script src="calc_script.js"></script>
 </body>
 </html>
